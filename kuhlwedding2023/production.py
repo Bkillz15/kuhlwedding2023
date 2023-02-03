@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ['SECRET']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # ALLOWED_HOSTS = ['https://kuhlweddding2023.azurewebsites.net']
 # ALLOWED_HOSTS = server {
@@ -146,9 +146,9 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']] if 'WEBSITE_HOSTNAME' in os.environ else []
+ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME'], os.environ['CUSTOMNAME']] if (('WEBSITE_HOSTNAME' in os.environ) or ('CUSTOMNAME' in os.environ)) else []
 
-CSRF_TRUSTED_ORIGINS = ['https://'+ os.environ['WEBSITE_HOSTNAME']] if 'WEBSITE_HOSTNAME' in os.environ else []
+CSRF_TRUSTED_ORIGINS = ['https://'+ os.environ['WEBSITE_HOSTNAME'],'https://'+ os.environ['CUSTOMNAME']] if (('WEBSITE_HOSTNAME' in os.environ) or ('CUSTOMNAME' in os.environ)) else []
 
 CSRF_COOKIE_SECURE = True
 
