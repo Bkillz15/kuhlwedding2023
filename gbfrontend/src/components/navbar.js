@@ -21,7 +21,7 @@ export default function Navbar(props) {
   function navMenu() {
     return(
       <>
-        <div className="md:hidden sticky top-[75px] z-20 bg-yellow-100/80 h-[155px] m-0 p-0">
+        <div className="md:hidden sticky top-[75px] z-20 bg-amber-100/80 h-[155px] m-0 p-0">
           <nav className="flex flex-col items-end">
           <Link 
             to="/" 

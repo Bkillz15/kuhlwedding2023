@@ -930,13 +930,13 @@ video {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
 .bg-tree{
-  background-image: url(b3882931594c8dfbccd6.png);
+  background-image: url("b3882931594c8dfbccd6.bc9de16c334b.png");
 }
 .bg-gradient-to-b{
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
 .bg-sunset{
-  background-image: url(3bde4b69e787b02bfdbf.jpg);
+  background-image: url("3bde4b69e787b02bfdbf.c55f4bc62988.jpg");
 }
 .from-purple-200{
   --tw-gradient-from: #e9d5ff;

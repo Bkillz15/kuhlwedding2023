@@ -13,9 +13,9 @@ export default function Guestform({props , updateGuest}) {
     const [songRequestArtist, setSongRequestArtist] = useState(props.songReqArtist);
     const [guestComment, setGuestComment] = useState(props.comments)
 
-    // useEffect(() => {
-    //     setEdit(!props.rsvpSubmitted)
-    // },[props.lastModified])
+    useEffect(() => {
+        setEdit(!props.rsvpSubmitted)
+    },[props.lastModified])
 
     function handleGuestSubmit() {
         // e.preventDefault();
@@ -32,7 +32,6 @@ export default function Guestform({props , updateGuest}) {
         guestVals.comments = guestComment;
         
         updateGuest(guestVals,props.guestID)
-        
         // setEdit(false)
     }
 
@@ -166,15 +165,13 @@ export default function Guestform({props , updateGuest}) {
                 </textarea>
             </div>
 
-            
-
             {/* mother's mating name */}
             </div>
         )
         // onSubmit={() => handleGuestSubmit()}
     const showGuestForm = (
 
-        <div action className="flex flex-col max-w-4xl rounded-4 bg-red-500 ">
+        <div  className="flex flex-col max-w-4xl rounded-4 bg-red-500 ">
             <div className="col-span-full flex flex-row flex-wrap bg-orange-400 rounded-t-xl">
                 <button className={"transition ease-in-out delay-75 flex-auto basis-1/4 sm:hover:scale-105 text-xl p-1 m-3 rounded-2 border-2 border-white " + (coming ? "bg-slate-200 text-slate-700" : "bg-slate-600 text-slate-200")} 
                     onClick={() => setComing(false)}
@@ -232,7 +229,7 @@ export default function Guestform({props , updateGuest}) {
                 {props.guestName}
             </h3>
             <div>
-                {showGuestForm}
+                {(props.rsvpSubmitted && !edit) ? showDetails : showGuestForm}
             </div>
            
         </div>
@@ -240,7 +237,7 @@ export default function Guestform({props , updateGuest}) {
 
 }
 
-//  {(props.rsvpSubmitted && !edit) ? showDetails : showGuestForm}
+
 
 
 

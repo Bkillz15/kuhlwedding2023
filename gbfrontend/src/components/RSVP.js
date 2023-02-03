@@ -2,9 +2,7 @@ import React from "react";
 import { useState, useEffect, useReducer } from "react";
 import Navbar from "./navbar";
 import Guestform from "./GuestForm";
-import GuestLoginModal from "./GuestLoginModal";
 import axios from "axios";
-import Modal from "./NameSearchModal";
 
 export default function RSVP() {
     
@@ -38,7 +36,6 @@ export default function RSVP() {
                 return {
                     verified : false,
                     confirmed : false,
-                    title : "Look up your Name",
                     nameInputText : "",
                     ansInputText : "",
                     errorText : "",
@@ -53,7 +50,6 @@ export default function RSVP() {
                     ...state,
                     verified : true,
                     confirmed : false,
-                    title : "Verify Your Identity",
                     nameInputText : "",
                     ansInputText : "",
                     errorText : "",
@@ -70,7 +66,6 @@ export default function RSVP() {
                     confirmed : true,
                     title : "All Set!",
                     nameInputText : "",
-                    ansInputText : "",
                     errorText : "",
                     promptText : "",
                     loading : false,
@@ -150,11 +145,12 @@ export default function RSVP() {
             try {
                 dispatch({type: "setLoading", loadingState: true})
                 console.log(modalControl.inputText)
-                const response = await axios.get("/api/get-guest" + "?id=" + modalControl.myID,
-                    {headers: {
-                        answer: modalControl.ansInputText
+                const response = await axios.get(("/api/get-guest" + "?id=" + modalControl.myID), { 
+                    params: {
+                        answer : modalControl.ansInputText
                     }
                 })
+
                 console.log(response.data)
                 dispatch({
                     type: "confirmed"
@@ -181,25 +177,37 @@ export default function RSVP() {
             dispatch({type:"setErrorText", errorText: "Not Veririfed"})
         }
     }
-
+    // TOMRROW!! UPDATE VIEW TO CHECK VALIDATION FROM DATA AND MAKE SURE ID INPUT IS LOGGED USER NOT THE USER TO BE UPDATED
     async function handleSubmit(guestID) {
         if (modalControl.verified === true) {
             try {
                 console.log("SENDING")
-                window.confirm(modalControl.myID + " : " + guestID)
+                console.log(typeof(guestLookup[guestID]))
+                const patchData = guestLookup[guestID]
+                patchData.validation = modalControl.ansInputText
                 console.log(modalControl.myID)
-                console.log(guestLookup[guestID])
-                const response = await axios.patch("/api/update-guest" + "?id=" + modalControl.myID,guestLookup[guestID],
-                    {headers: {
-                        answer: modalControl.ansInputText
-                    }
-                })
+                console.log(patchData)
+                const response = await axios.patch("/api/update-guest" + "?id=" + guestID , patchData)
                 console.log("Success")
                 console.log(response.data)
                 setGuestLookup(prevState => ({...prevState, [guestID] : response.data}))
             } catch(error) {
-                console.log(error.response.data)
-                console.log(error.request)
+                if (error.response) {
+                  // The request was made and the server responded with a status code
+                  // that falls out of the range of 2xx
+                  console.log(error.response.data);
+                  console.log(error.response.status);
+                  console.log(error.response.headers);
+                } else if (error.request) {
+                  // The request was made but no response was received
+                  // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+                  // http.ClientRequest in node.js
+                  console.log(error.request);
+                } else {
+                  // Something happened in setting up the request that triggered an Error
+                  console.log('Error', error.message);
+                }
+                console.log(error.config)
             } 
         }
         
@@ -269,8 +277,8 @@ export default function RSVP() {
                     <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                         {/*header*/}
                         <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                        <h3 className="text-3xl font-semibold">
-                            {modalControl.title}
+                        <h3 className="text-2xl font-semibold">
+                            Look up your name
                         </h3>
                         <button
                             className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"

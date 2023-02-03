@@ -47,15 +47,14 @@ class GetGuest(APIView):
     #permission_classes = (IsAuthenticated,) #permission classes
     serializer_class = ReactGuestDataSerializer
     lookup_serializer = SecretAnswerSerializer
-    lookup_url_kwarg = 'id'
-    header_url_kwarg = 'answer'
-
+    id_kwarg = 'id'
+    ans_kwarg = 'answer'
+   
     def get(self, request, format=None):
-        if not self.request.session.exists(self.request.session.session_key):
-            self.request.session.create()
-
-        reqID = request.GET.get(self.lookup_url_kwarg)
-        reqAnswer = request.headers.get(self.header_url_kwarg)
+        # if not self.request.session.exists(self.request.session.session_key):
+        #     self.request.session.create()
+        reqID = request.GET.get(self.id_kwarg)
+        reqAnswer = request.GET.get(self.ans_kwarg)
         #Check for empty request kwarg
         if (reqID == None) or len(reqID) == 0:
             return Response({'Bad Request': 'Guest ID is Empty'}, status=status.HTTP_400_BAD_REQUEST)
@@ -80,7 +79,7 @@ class GetGuest(APIView):
                 for guest in range(len(guestInfo)):
                     data = ReactGuestDataSerializer(guestInfo[guest]).data
                     guestData[data['guestID']] = data
-                self.request.session['skillTestingA'] = reqAnswer
+                # self.request.session['skillTestingA'] = reqAnswer
                 return Response(guestData,status=status.HTTP_200_OK)
         return Response({'Bad Request': 'Answer is Incorrect'}, status=status.HTTP_400_BAD_REQUEST)
 
@@ -91,47 +90,45 @@ class UpdateGuest(APIView):
     
     serializer_class = UpdateGuestSerializer
     lookup_url_kwarg = 'id'
-    header_url_kwarg = 'answer'
 
     def patch(self, request, format=None):
-        print('update-guest START')
+
         # if not self.request.session.exists(self.request.session.session_key):
         #     self.request.session.create()
-
-        prelim_serlializer = GuestNameIDSerializer(data=request.data)
-        
-        # print("patch start")
-        # print(request.data)
-        # if not prelim_serlializer.is_valid():
-        #     print(prelim_serlializer.errors)
-        #     return Response({'Bad Request': 'Invalid Data...'}, status=status.HTTP_400_BAD_REQUEST)
-        # print(prelim_serlializer.data)
+        # Grab PATCH data from request
+        postData = request.data
+        # Grab UUID for the current user fro url
         reqID = request.GET.get(self.lookup_url_kwarg)
-        print(reqID)
-        updateID = request.data.get("guestID")
-        print(updateID)
-        reqAnswer = request.headers.get(self.header_url_kwarg)
-        print(reqAnswer)
+        # Grab the UUID of the guest being updated from data
+        updateID = postData.get("guestID")
+        # Grab the secret answer from the request
+        reqAnswer = postData.get("validation")
+
+        # Check that the ID field and answer fields are not empty before proceeding
         if (reqID == None) or len(reqID) == 0:
-            return Response({'Bad Request': 'Guest ID is Empty'}, status=status.HTTP_400_BAD_REQUEST)
-        # if (reqAnswer == None) or len(reqAnswer) == 0:
-        #     return Response({'Bad Request': 'Answer is Empty'}, status=status.HTTP_400_BAD_REQUEST)
-        # if (reqAnswer != SecretAnswerSerializer(guestInfo[0]).data['skillTestingA']):
-        #     return Response({'Bad Request': 'Answer is Incorrect'}, status=status.HTTP_400_BAD_REQUEST)
-        #If not empty - pull data from model
+            return Response({'Bad Request': 'Missing ID'}, status=status.HTTP_400_BAD_REQUEST)
+        if (reqAnswer == None) or len(reqAnswer) == 0:
+            return Response({'Bad Request': 'Missing Credentials'}, status=status.HTTP_400_BAD_REQUEST)
+        # If not empty - pull data from model
         guestInfo = guestdata.objects.filter( guestID=reqID )
+        # Check that the guest being updated exists
         if not guestInfo.exists():
             return Response({'Guest Not Found': 'Guest ID is Invalid'}, status=status.HTTP_404_NOT_FOUND)
+        if (reqAnswer != SecretAnswerSerializer(guestInfo[0]).data['skillTestingA']):
+            return Response({'Bad Request': 'Invalid Credentials'}, status=status.HTTP_400_BAD_REQUEST)
         if len(guestInfo) > 1:   
             return Response({'Bad Request': 'Multiple Results - Database ERROR'}, status=status.HTTP_400_BAD_REQUEST)
+        #Get all data IDs of associated guests from database and store in list
         associatedGuests = AssociatedGuestSerializer(guestInfo[0]).data
         lookupGuests = associatedGuests.get('associatedGuests').split(",")
 
+        #Check that the guest is associated with the request user
         if updateID in lookupGuests:
-            serializer = self.serializer_class(data=request.data)
+            serializer = self.serializer_class(data = postData)
             if not serializer.is_valid():
                 return Response({'Bad Request': 'Invalid Data...'}, status=status.HTTP_400_BAD_REQUEST)
 
+            #Update data
             queryData = guestdata.objects.filter( guestID=updateID )
             updateData = queryData[0]
 
@@ -157,6 +154,7 @@ class UpdateGuest(APIView):
                 'comments',
                 'lastModified',
             ])
+            #return data with updated user info
             return Response(ReactGuestDataSerializer(updateData).data, status=status.HTTP_200_OK)
         else:
             return Response({'Bad Request': 'Guest Update Not Associated with Validated Guest'}, status=status.HTTP_400_BAD_REQUEST)

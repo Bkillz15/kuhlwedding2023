@@ -5,7 +5,7 @@ export default function Home(props) {
 
   // bg-fixed bg-cover bg-center bg-[url("../public/img/kb_bg.jpg")
     return(
-        <div className='bg-amber-50 bg-tree bg-fixed bg-contain bg-no-repeat bg-center'>
+        <div className='bg-red-300 bg-tree bg-fixed bg-contain bg-no-repeat bg-center'>
         <Navbar />
         <main className="mx-auto max-w-[1080px]">
           <section className='sm:flex-row p-6 mt-6 sm:mt-16 items-center mb-12'>
