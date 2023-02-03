@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'kuhlwedding2023'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B7DF95A4F3CC4BBE9C68477291409EE1 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D8F22F85FB564E5D9469574B100BE55E }}
