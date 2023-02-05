@@ -2,8 +2,7 @@
 module.exports = {
   
     content: ['./src/**/*.{html,js,jsx}',
-    './templates/gbfrontend/index.html',
-    './node_modules/tw-elements/dist/js/**/*.js',
+    // './templates/gbfrontend/index.html',
   ],
     theme: {
       fontSize: {
@@ -22,7 +21,7 @@ module.exports = {
         'serif': ['Marcellus','ui-serif', 'Georgia'],
         'mono': ['ui-monospace', 'SFMono-Regular'],
         'display': ['Oswald'],
-        'hw': ['Rouge Script'],
+        'hw': ['Dancing Script'],
         'body': ['"Open Sans"']
       },
       screens: {
@@ -38,12 +37,14 @@ module.exports = {
         },
         backgroundImage: {
             'sunset': "url('/static/images/sunset.jpg')",
-            'tree': "url('/static/images/golden-tree.png')"
-        }
+            'tree': "url('/static/images/golden-tree.png')",
+            'tree-light': "url('/static/images/golden-tree-light.png')",
+            'kb-home': "url('/static/images/kb-closelier.jpg')",
+        },
       },
     },
     plugins: [
-      require('tw-elements/dist/plugin')
     ],
   }
   
+  // './node_modules/tw-elements/dist/js/**/*.js',

@@ -39,8 +39,8 @@ export default function Guestform({props , updateGuest}) {
 
             <div className="grid gap-3 grid-flow-row grid-cols-1 sm:grid-cols-2 mx-3 my-3">  
             {/* Dinner Options */}
-            <h4 className="col-span-full text-center p-2 bg-gradient-to-br from-purple-200 to-rose-200 rounded-3 border-2 border-cyan-300">Dinner Options</h4>
-            <div className={"flex flex-col bg-gradient-to-br from-purple-200 to-rose-200 rounded-3 border-2 border-cyan-300  " + (mainCourse === "Pork" ? "drop-shadow-lg" : "opacity-70")}>
+            <h4 className="col-span-full text-center p-2">Dinner Options</h4>
+            <div className={"flex flex-col  " + (mainCourse === "Pork" ? "drop-shadow-lg" : "opacity-70")}>
                 <button className={"transition ease-in-out delay-75 sm:hover:scale-105 py-2 px-10 mx-auto my-3 rounded-2 text-lg " + (mainCourse === "Pork" ? "bg-slate-600 text-slate-200" : "bg-slate-200 text-slate-700")}
                     onClick={() => setMainCourse("Pork")}
                     type="button">
@@ -50,7 +50,7 @@ export default function Guestform({props , updateGuest}) {
                     The pork is a fine roast with many herbs and spices. Served with cherry potatoes and a russet salad
                 </p>
             </div>
-            <div className={"flex flex-col bg-gradient-to-br from-purple-200 to-rose-200 rounded-3 border-2 border-cyan-300 " + (mainCourse === "Chicken" ? "drop-shadow-lg" : "opacity-70")}>
+            <div className={"flex flex-col " + (mainCourse === "Chicken" ? "drop-shadow-lg" : "opacity-70")}>
                 <button className={"transition ease-in-out delay-75 sm:hover:scale-105 py-2 px-10 mx-auto my-3 rounded-2 text-lg " + (mainCourse === "Chicken" ? "bg-slate-600 text-slate-200" : "bg-slate-200 text-slate-700")}
                     onClick={() => setMainCourse("Chicken")}
                     type="button">
@@ -60,7 +60,7 @@ export default function Guestform({props , updateGuest}) {
                     Stokely is proud to provide their finest boiled chicken breast with an optional side of salt ($3.00 extra)
                 </p>
             </div>
-            <div className={"flex flex-col bg-gradient-to-br from-purple-200 to-rose-200 rounded-3 border-2 border-cyan-300 " + (mainCourse === "Veggie" ? "drop-shadow-lg" : "opacity-70")}>
+            <div className={"flex flex-col " + (mainCourse === "Veggie" ? "drop-shadow-lg" : "opacity-70")}>
                 <button className={"transition ease-in-out delay-75 sm:hover:scale-105 py-2 px-10 mx-auto my-3 rounded-2 text-lg " + (mainCourse === "Veggie" ? "bg-slate-600 text-slate-200" : "bg-slate-200 text-slate-700")}
                     onClick={() => setMainCourse("Veggie")}
                     type="button">
@@ -70,7 +70,7 @@ export default function Guestform({props , updateGuest}) {
                     Milk soup with some eggy stuff. No gabagoooooo
                 </p>
             </div>
-            <div className={"flex flex-col bg-gradient-to-br from-purple-200 to-rose-200 rounded-3 border-2 border-cyan-300 " + (mainCourse === "Vegan" ? "drop-shadow-lg" : "opacity-70")}>
+            <div className={"flex flex-col " + (mainCourse === "Vegan" ? "drop-shadow-lg" : "opacity-70")}>
                 <button className={"transition ease-in-out delay-75 sm:hover:scale-105 py-2 px-10 mx-auto my-3 rounded-2 text-lg " + (mainCourse === "Vegan" ? "bg-slate-600 text-slate-200" : "bg-slate-200 text-slate-700")}
                     onClick={() => setMainCourse("Vegan")}
                     type="button">
@@ -80,7 +80,7 @@ export default function Guestform({props , updateGuest}) {
                     Leafs
                 </p>
             </div>
-            <div className="col-span-full flex flex-col place-items-stretch bg-gradient-to-r from-green-300 to-fuchsia-300 rounded-3 border-2 border-cyan-300">
+            <div className="col-span-full flex flex-col place-items-stretch ">
                 <label htmlFor="alergies" className="mt-2 mb-1 mx-[6%] text-sm font-medium text-slate-700">Any neccessary dietary restrictions? Let us know!</label>
                 <input 
                     type="text" 
@@ -93,7 +93,7 @@ export default function Guestform({props , updateGuest}) {
             </div>
 
             {/* Staying the night and bus?? */}
-            <div className="flex flex-col place-items-stretch bg-gradient-to-br from-purple-200 to-rose-200 rounded-3 border-2 border-cyan-300" >
+            <div className="flex flex-col place-items-stretch" >
                 < p className="bg-slate-200 rounded-3 p-2 mx-3 my-3 grow">
                     Are you interested in spending the night at Stokely? There are a number of beds available. Details will be available closer to the date.
                 </p>
@@ -111,7 +111,7 @@ export default function Guestform({props , updateGuest}) {
                 </div>
                 
             </div>
-            <div className="flex flex-col bg-gradient-to-br from-purple-200 to-rose-200 rounded-3 border-2 border-cyan-300" >
+            <div className="flex flex-col" >
                 <p className="bg-slate-200 rounded-3 p-2 mx-3 my-3">
                     We are looking to book transportation back to town. Would you be interested in a ride? We will set a couple drop off locations around town depending who is on the bus.
                 </p>
@@ -131,7 +131,7 @@ export default function Guestform({props , updateGuest}) {
             </div>
 
             {/* song request */}
-            <div className="flex flex-col bg-gradient-to-r from-green-300 to-fuchsia-300 rounded-3 border-2 border-cyan-300 drop-shadow-lg">
+            <div className="flex flex-col  drop-shadow-lg">
                 <h4 className="py-2 px-3 mx-3 mt-3 bg-red-200 text-blue-900 text-center rounded-2">Song Request</h4>
                 <label htmlFor="songReqName" className="mb-1 mx-[11%] text-sm font-medium text-slate-700">Song Title</label>
                 <input 
@@ -152,7 +152,7 @@ export default function Guestform({props , updateGuest}) {
                     className="mb-3 mx-[9%] pl-3 py-1 rounded-full bg-black text-white">
                 </input>
             </div>
-            <div className="flex flex-col place-items-stretch bg-gradient-to-r from-green-300 to-fuchsia-300 rounded-3 border-2 border-cyan-300">
+            <div className="flex flex-col place-items-stretch ">
                 <h4 className="py-2 px-3 mx-3 my-3 bg-red-200 text-blue-900 text-center rounded-2">
                     Comments or Questions? 
                 </h4>
@@ -199,33 +199,34 @@ export default function Guestform({props , updateGuest}) {
     const showDetails = (
 
         <>
-            <div className="grid grid-flow-row grid-cols-2 md:grid-cols-4 bg-pink-300 rounded-4 px-1 py-3 text-justify-center">
-                <p className="bg-white text-right pr-3 mt-1 mb-0 ml-3 mr-1 rounded-2">Dinner Selection:</p>
-                <p className="bg-white text-left pl-3 mt-1 mb-0 mr-3 ml-1 rounded-2">{props.dinnerChoice}</p>
-                <p className="bg-white text-right pr-3 mt-1 mb-0 ml-3 mr-1 rounded-2">Dietary Restrictions:</p>
-                <p className="bg-white text-left pl-3 mt-1 mb-0 mr-3 ml-1 rounded-2">{props.dietaryRes}</p>
-                <p className="bg-white text-right pr-3 mt-1 mb-0 ml-3 mr-1 rounded-2">Spending the night:</p>
-                <p className="bg-white text-left pl-3 mt-1 mb-0 mr-3 ml-1 rounded-2">{props.sleepOver ? "Yes" : "No"}</p>
-                <p className="bg-white text-right pr-3 mt-1 mb-0 ml-3 mr-1 rounded-2">Taking the bus:</p>
-                <p className="bg-white text-left pl-3 mt-1 mb-0 mr-3 ml-1 rounded-2">{props.busRide ? "Yes" : "No"}</p>
-                <p className="bg-white text-right pr-3 mt-1 mb-0 ml-3 mr-1 rounded-2">Song Request Title:</p>
-                <p className="bg-white text-left pl-3 mt-1 mb-0 mr-3 ml-1 rounded-2">{props.songReqTitle}</p>
-                <p className="bg-white text-right pr-3 mt-1 mb-0 ml-3 mr-1 rounded-2">Song Request Artist:</p>
-                <p className="bg-white text-left pl-3 mt-1 mb-0 mr-3 ml-1 rounded-2">{props.songReqArtist}</p>
-                <p className="bg-white col-span-full md:col-span-1 md:text-right pr-3 mt-1 mb-0 ml-3 mr-1 rounded-2">Comments:</p>
-                <p className="bg-white col-span-full md:col-span-3 rounded-2 mt-1 mb-1 mx-[0.75rem]">{props.comments}</p>
-            </div>
-            <button
+            <div className="grid grid-flow-row grid-cols-2 md:grid-cols-4 rounded-xl px-1 py-3 text-justify-center">
+                <p className="bg-white/70 text-blue-600 text-right pr-3 mt-1 mb-0 ml-3 mr-1 rounded">Dinner Selection:</p>
+                <p className="bg-white/70 text-blue-600 text-left pl-3 mt-1 mb-0 mr-3 ml-1 rounded">{props.dinnerChoice}</p>
+                <p className="bg-white/70 text-blue-600 text-right pr-3 mt-1 mb-0 ml-3 mr-1 rounded">Dietary Restrictions:</p>
+                <p className="bg-white/70 text-blue-600 text-left pl-3 mt-1 mb-0 mr-3 ml-1 rounded">{props.dietaryRes}</p>
+                <p className="bg-white/70 text-blue-600 text-right pr-3 mt-1 mb-0 ml-3 mr-1 rounded">Spending the night:</p>
+                <p className="bg-white/70 text-blue-600 text-left pl-3 mt-1 mb-0 mr-3 ml-1 rounded">{props.sleepOver ? "Yes" : "No"}</p>
+                <p className="bg-white/70 text-blue-600 text-right pr-3 mt-1 mb-0 ml-3 mr-1 rounded">Taking the bus:</p>
+                <p className="bg-white/70 text-blue-600 text-left pl-3 mt-1 mb-0 mr-3 ml-1 rounded">{props.busRide ? "Yes" : "No"}</p>
+                <p className="bg-white/70 text-blue-600 text-right pr-3 mt-1 mb-0 ml-3 mr-1 rounded">Song Request Title:</p>
+                <p className="bg-white/70 text-blue-600 text-left pl-3 mt-1 mb-0 mr-3 ml-1 rounded">{props.songReqTitle}</p>
+                <p className="bg-white/70 text-blue-600 text-right pr-3 mt-1 mb-0 ml-3 mr-1 rounded">Song Request Artist:</p>
+                <p className="bg-white/70 text-blue-600 text-left pl-3 mt-1 mb-0 mr-3 ml-1 rounded">{props.songReqArtist}</p>
+                <p className="bg-white/70 text-blue-600 col-span-full md:col-span-1 md:text-right pr-3 mt-1 mb-0 ml-3 mr-1 rounded-2">Comments:</p>
+                <p className="bg-white/70 text-blue-600 col-span-full md:col-span-3 rounded-2 mt-1 mb-1 mx-[0.75rem]">{props.comments}</p>
+                <button
                 onClick={() => setEdit(true)} 
-                className="transition ease-in-out delay-75 sm:hover:scale-105 basis-full text-xl py-1 px-3 mb-3 mx-3 rounded-2 border-2 border-white bg-slate-600 text-slate-200" >
+                className="transition ease-in-out delay-75 sm:hover:scale-105 col-span-full md:col-span-2 text-xl py-1 px-3 mt-5 mb-1 mx-3 rounded-lg border-2 border-slate-600/70 bg-rose-300 text-slate-600" >
                 EDIT
             </button>
+            </div>
+            
         </>
         )
 
     return(
-        <div className="my-3 px-3">
-            <h3 className="text-blue-800 text-xl text-center font-semibold py-1 px-3 rounded-2 border-2 border-white bg-gradient-to-r from-purple-200 to-yellow-200">
+        <div className="my-3 p-3 border-t-4 border-b-4 border-double border-amber-600 rounded-xl bg-gradient-to-r from-transparent via-white/80">
+            <h3 className="text-blue-500 text-xl text-center font-semibold py-1 px-3 mb-3 border-b-2 rounded-lg border-amber-600">
                 {props.guestName}
             </h3>
             <div>

@@ -21,49 +21,49 @@ export default function Navbar(props) {
   function navMenu() {
     return(
       <>
-        <div className="md:hidden sticky top-[75px] z-20 bg-amber-100/80 h-[155px] m-0 p-0">
-          <nav className="flex flex-col items-end">
+        <div className="m-0 p-0 md:hidden sticky top-[75px] z-20 bg-slate-700/60 h-[160px] border-b-2 border-dotted border-slate-500/30">
+          <nav className="flex flex-col items-end pt-1">
           <Link 
             to="/" 
             className={"w-28 pb-2 pt-0 pr-[5%] " +
-              "uppercase text-right font-semibold hover:text-amber-600/80 sm:hover:text-amber-500/60 no-underline " + ((pathNow.pathname === "/") ? 'text-amber-500/60' : 'text-amber-600/80' )}
+              "uppercase text-right font-semibold sm:hover:text-slate-300/70 no-underline " + ((pathNow.pathname === "/") ? 'text-slate-300/70' : 'text-slate-600' )}
             >
               HOME
           </Link>
           <Link 
             to="/travel" 
             className={"w-28 py-2 pr-[5%] " +
-            "border-t border-amber-600/30 " +
-            "uppercase text-right font-semibold hover:text-amber-600/80 sm:hover:text-amber-500/60 no-underline " + ((pathNow.pathname === "/travel") ? 'text-amber-500/60' : 'text-amber-600/80' )}
+            "border-t border-slate-600/90 " +
+            "uppercase text-right font-semibold sm:hover:text-slate-300/70 no-underline " + ((pathNow.pathname === "/travel") ? 'text-slate-300/70' : 'text-slate-600' )}
             >
               Travel
           </Link>
           <Link 
             to="/gallery" 
             className={"w-28 py-2 pr-[5%] " +
-              "border-t border-amber-600/30 " +
-              "uppercase text-right font-semibold hover:text-amber-600/80 sm:hover:text-amber-500/60 no-underline " + ((pathNow.pathname === "/gallery") ? 'text-amber-500/60' : 'text-amber-600/80' )}
+              "border-t border-slate-600/90 " +
+              "uppercase text-right font-semibold sm:hover:text-slate-300/70 no-underline " + ((pathNow.pathname === "/gallery") ? 'text-slate-300/70' : 'text-slate-600' )}
             >
               Gallery
           </Link> 
           <Link 
             to="/rsvp" 
             className={"w-28 py-2 pr-[5%] " +
-            "border-t border-amber-600/30 " +
-            "uppercase text-right font-semibold hover:text-amber-600/80 sm:hover:text-amber-500/60 no-underline " + ((pathNow.pathname === "/rsvp") ? 'text-amber-500/60' : 'text-amber-600/80' )}
+            "border-t border-slate-600/90 " +
+            "uppercase text-right font-semibold sm:hover:text-slate-300/70 no-underline " + ((pathNow.pathname === "/rsvp") ? 'text-slate-300/70' : 'text-slate-600' )}
             >
               RSVP
           </Link>   
           </nav>
         </div>
-        <div className="md:hidden sticky top-[230px] z-20 w-full h-16 bg-gradient-to-b from-yellow-100/80 m-0 p-0"></div>
+        <div className="md:hidden sticky top-[235px] z-20 w-full h-20 bg-gradient-to-b from-slate-700/60 m-0 p-0"></div>
       </>
     )
   }
 
   return(
-    <>
-    <div className={'sticky top-0 z-20 h-[75px] backdrop-blur-xl w-full md:bg-gradient-to-b md:from-yellow-100 md:to-yellow-100/10 p-0 m-0' + (((showNav === true) && (isMed == true))? ' bg-yellow-100/80' : ' bg-gradient-to-b from-yellow-100 to-yellow-100/10')}>
+    <div className="m-0 p-0 sticky top-0 z-20 backdrop-blur">
+    <div className={'h-[75px] w-full md:bg-gradient-to-b md:from-slate-700/80 md:to-slate-700/10 p-0 m-0' + (((showNav === true) && (isMed == true))? ' bg-slate-700/60' : ' bg-gradient-to-b from-slate-700/80 to-slate-700/10')}>
       <div className="flex flex-row justify-between max-w-[1080px] mx-auto px-0 pt-0 pb-0 md:pb-2">
         {/* Flex Container */}
         {/* <a href="/" target='_blank' rel='noreferrer'></a> _blank <= opens in new tab, noreferrer <= hides information from previous page*/} 
@@ -79,40 +79,40 @@ export default function Navbar(props) {
           <Link 
             to="/" 
             className={"pt-3 pb-2 px-3 m-0 " + 
-              "uppercase text-xl md:text-xl font-semibold no-underline " + ((pathNow.pathname === "/") ? 'text-amber-500/60' : 'text-amber-600/80' ) + " text-amber-600/80 hover:text-amber-500/60 " + 
-              "hover:translate-y-1 transition duration-300 ease-in-out " + 
-              "bg-gradient-to-b from-amber-200/50 to-amber-50/10 "  +
-              "border-l-2 border-r border-amber-200/30 rounded-b-3xl rounded-t-sm"}
+              "uppercase text-xl md:text-xl font-semibold no-underline " + ((pathNow.pathname === "/") ? 'text-slate-600/60' : 'text-slate-600' ) + " hover:text-slate-600/60 " + 
+              "hover:shadow-sm hover:shadow-yellow-200 transition duration-300 ease-in-out " + 
+              "bg-gradient-to-b from-slate-300/70 to-slate-30/0 "  +
+              "border-l-2 border-r border-slate-600/60 rounded-b-3xl rounded-t-sm"}
             >
               HOME
           </Link>
           <Link 
             to="/travel" 
             className={"pt-3 pb-2 px-3 m-0 " + 
-              "uppercase text-xl md:text-xl font-semibold no-underline " + ((pathNow.pathname === "/travel") ? 'text-amber-500/60' : 'text-amber-600/80' ) + " text-amber-600/80 hover:text-amber-500/60 " + 
-              "hover:translate-y-1 transition duration-300 ease-in-out " + 
-              "bg-gradient-to-b from-amber-200/50 to-amber-50/10 "  +
-              "border-l border-r border-amber-200/30 rounded-b-3xl rounded-t-sm"}
+              "uppercase text-xl md:text-xl font-semibold no-underline " + ((pathNow.pathname === "/travel") ? 'text-slate-600/60' : 'text-slate-600' ) + " hover:text-slate-600/60 " + 
+              "hover:shadow-sm hover:shadow-yellow-200 transition duration-300 ease-in-out " + 
+              "bg-gradient-to-b from-slate-300/70 to-slate-30/0 "  +
+              "border-l-2 border-r border-slate-600/60 rounded-b-3xl rounded-t-sm mx-2"}
             >
               Travel
             </Link>
           <Link 
             to="/gallery" 
             className={"pt-3 pb-2 px-3 m-0 " + 
-              "uppercase text-xl md:text-xl font-semibold no-underline " + ((pathNow.pathname === "/gallery") ? 'text-amber-500/60' : 'text-amber-600/80' ) + " text-amber-600/80 hover:text-amber-500/60 " + 
-              "hover:translate-y-1 transition duration-300 ease-in-out " + 
-              "bg-gradient-to-b from-amber-200/50 to-amber-50/10 "  +
-              "border-l border-r border-amber-200/30 rounded-b-3xl rounded-t-sm"}
+              "uppercase text-xl md:text-xl font-semibold no-underline " + ((pathNow.pathname === "/gallery") ? 'text-slate-600/60' : 'text-slate-600' ) + " hover:text-slate-600/60 " + 
+              "hover:shadow-sm hover:shadow-yellow-200 transition duration-300 ease-in-out " + 
+              "bg-gradient-to-b from-slate-300/70 to-slate-30/0 "  +
+              "border-l-2 border-r border-slate-600/60 rounded-b-3xl rounded-t-sm mr-2"}
             >
               Gallery
             </Link> 
           <Link 
             to="/rsvp" 
             className={"pt-3 pb-2 px-3 m-0 " + 
-              "uppercase text-xl md:text-xl font-semibold no-underline " + ((pathNow.pathname === "/rsvp") ? 'text-amber-500/60' : 'text-amber-600/80' ) + " text-amber-600/80 hover:text-amber-500/60 " + 
-              "hover:translate-y-1 transition duration-300 ease-in-out " + 
-              "bg-gradient-to-b from-amber-200/50 to-amber-50/10 "  +
-              "border-l border-r-2 border-amber-200/30 rounded-b-3xl rounded-t-sm"}
+              "uppercase text-xl md:text-xl font-semibold no-underline " + ((pathNow.pathname === "/rsvp") ? 'text-slate-600/60' : 'text-slate-600' ) + " hover:text-slate-600/60 " + 
+              "hover:shadow-sm hover:shadow-yellow-200 transition duration-300 ease-in-out " + 
+              "bg-gradient-to-b from-slate-300/70 to-slate-30/0 "  +
+              "border-l-2 border-r border-slate-600/60 rounded-b-3xl rounded-t-sm"}
             >
               RSVP
             </Link>
@@ -120,15 +120,15 @@ export default function Navbar(props) {
         {/* Links Mobile */}
         
         <div className="md:hidden space-y-2 m-4" onClick={() => setShowNav(!showNav)}>
-          <div className="w-8 h-0.5 bg-amber-700/50 rounded-full"></div>
-          <div className="w-8 h-0.5 bg-amber-700/50 rounded-full"></div>
-          <div className="w-8 h-0.5 bg-amber-700/50 rounded-full"></div>
+          <div className="w-8 h-0.5 bg-slate-700/50 rounded-full"></div>
+          <div className="w-8 h-0.5 bg-slate-700/50 rounded-full"></div>
+          <div className="w-8 h-0.5 bg-slate-700/50 rounded-full"></div>
         </div>
 
             
       </div>
     </div>
     {(showNav === true) ? navMenu() : null}
-    </>
+    </div>
   )
 };

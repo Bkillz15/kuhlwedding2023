@@ -12,22 +12,23 @@ module.exports = {
     rules: [
       {
         test: /\.js|.jsx$/,
-        exclude: /node_modules/,
+        exclude: [/node_modules/,/staticfiles/],
         use: [ 'babel-loader' ]
       },
       {
         test: /\.css$/,
-        exclude: /node_modules/,
-        use: ['style-loader', 'css-loader', 'postcss-loader']
+        exclude: [/node_modules/,/staticfiles/],
+        use: ['style-loader', 'css-loader', 'postcss-loader',]
       },
     ],
   },
-  optimization: {
-    minimize: true,
-  },
+  // optimization: {
+  //   minimize: true,
+  // },
   plugins: [
     new webpack.DefinePlugin({
       "process.env": {
+        // NODE_ENV: JSON.stringify("development"),
         NODE_ENV: JSON.stringify("production"),
       },
     }),

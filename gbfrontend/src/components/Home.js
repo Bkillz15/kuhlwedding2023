@@ -5,38 +5,53 @@ export default function Home(props) {
 
   // bg-fixed bg-cover bg-center bg-[url("../public/img/kb_bg.jpg")
     return(
-        <div className='bg-red-300 bg-tree bg-fixed bg-contain bg-no-repeat bg-center'>
+        <div className='bg-sky-200 bg-tree-light bg-fixed bg-contain bg-no-repeat bg-center'>
         <Navbar />
         <main className="mx-auto max-w-[1080px]">
-          <section className='sm:flex-row p-6 mt-6 sm:mt-16 items-center mb-12'>
-            <article className='sm:mx-[10%] bg-gradient-to-r py-10 from-transparent via-white/80 backdrop-saturate-[0.60] border-t-8 border-b-8 border-double border-amber-400 rounded-xl'>
-              <h2 className='text-5xl font-bold text-center sm:text-6xl sm:text-center font-hw text-blue-400'>
-                Kylie Denardo
+          <section className='sm:flex-row p-0 mt-6 sm:mt-16 items-center mb-12'>
+            <article className='flex flex-row sm:mx-[10%] p-0 backdrop-saturate-[0.60] border-t-8 border-b-8 border-double border-slate-600/70 rounded-xl shadow-lg shadow-yellow-200'>
+              <div className=" w-[20%] bg-gradient-to-l from-white/80 " />
+              <div className=" w-[60%] bg-white/80">
+              <h2 className='py-10 text-4xl font-bold text-center sm:text-6xl sm:text-center font-hw text-slate-600'>
+                Kylie Denardo <br/> and <br/> Brandon Uhl
               </h2>
-              <h2 className='text-5xl font-bold text-center sm:text-6xl sm:text-center font-hw text-blue-400'>
-                &
-              </h2>
-              <h2 className='text-5xl font-bold text-center sm:text-6xl sm:text-center font-hw text-blue-400'>
-                Brandon Uhl
-              </h2>
+              </div>
+              <div className=" w-[20%] bg-gradient-to-r from-white/80 "/>
             </article>
+
+            <div className="mt-20 p-3 sm:mx-[10%] bg-white/80 rounded-2xl border-8 border-double border-slate-600/70 shadow-lg shadow-yellow-200">
+              <img
+                src="../.././static/images/kb_closelier.jpg"
+                alt="Kylie and Branodn hanging in the park"
+                className=""
+                />
+            </div>
             
-            <article className='sm:mx-[10%] px-[10%] bg-gradient-to-r mt-20 py-10 from-white/40 via-white/80 to-white-40 backdrop-saturate-[0.60] border-8 border-double border-amber-400 rounded-xl shadow-xl shadow-amber-400/70'>
-              <h4 className='text-4xl font-bold mt-4 text-center sm:text-left font-serif text-blue-400'>
-                1 Night in Guhlie
+            <article className='sm:mx-[10%] px-[10%] bg-gradient-to-r mt-20 py-10 from-white/40 via-white/80 to-white-40 backdrop-saturate-[0.60] rounded-2xl border-8 border-double border-slate-600/70 shadow-lg shadow-yellow-200'>
+              <h4 className='text-3xl font-bold mt-4 text-center sm:text-left font-serif text-slate-600'>
+                A magical night in Goulais River
               </h4>
-              <h4 className='text-2xl mt-4 text-center sm:text-left font-serif text-blue-400'>
+              <h4 className='text-2xl mt-4 text-center sm:text-left font-serif text-slate-600'>
                 Friday August 11<sup>th</sup>, 2023
               </h4>
-              <h4 className="text-xl mt-5 text-center sm:text-left font-serif text-blue-400">
-                Ceremony and reception held at<br/><br/><span className="text-2xl font-extrabold">Stokely Creek Lodge</span><br/><br/> Pickard Rd,<br/>Goulais River,ON<br/>P0S 1E0
+              <h4 className='text-xl mt-4 text-center sm:text-left font-serif text-slate-600'>
+                Please arrive for 3:30 PM 
+              </h4>
+              <h4 className="text-xl mt-3 text-center sm:text-left font-serif text-slate-600">
+                Ceremony and reception held at:
+              </h4>
+              <h4 className="mt-2 text-2xl font-bold text-center sm:text-left font-serif text-slate-600">
+                Stokely Creek Lodge
+              </h4>
+              <h4 className="text-xl mt-2 text-center sm:text-left font-serif text-slate-600">
+               194 Pickard Rd,<br/>Goulais River,ON<br/>P0S 1E0
               </h4>
             </article>
           </section>
-           <hr className='mx-auto bg-blue-400 bg w-1/2 h-2 rounded border-none drop-shadow-lg opacity-60'/>
+           <hr className='mx-auto bg-slate-600 bg w-1/2 h-2 rounded border-none shadow-lg shadow-yellow-200'/>
           <section className='flex flex-col-reverse justify-center sm:flex-row p-6 items-center gap-8 mb-12'>
             <article className=''>
-              <p className='text-2xl mt-4 sm:px-[20%] text-center sm:text-left text-blue-400 '>
+              <p className='text-2xl mt-4 sm:px-[20%] text-center sm:text-left text-slate-600 '>
                 We have decided to host our celebration at Stokely Creek Lodge in gorgeous Goulais River, Ontario
                 so that the party will not stop. Be peppered for some serious debauchery!
               </p>

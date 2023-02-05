@@ -1,23 +1,20 @@
 import React from "react";
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 import Home from "./Home";
 import Travel from "./Travel";
 import RSVP from "./RSVP";
 import Gallery from "./Gallery";
+import './App.css';
 
-const App = ReactDOM.createRoot(document.getElementById('app'));
-
-App.render(
-  <BrowserRouter>    
+export default function App() {
+  return (
+    <div className="App">
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/travel" element={<Travel />}/>
         <Route path="/rsvp" element={<RSVP />}/>
         <Route path="/gallery" element={<Gallery />}/>
       </Routes>
-  </BrowserRouter>
-);
-
-  
-  // ReactDOM.render(<App />, document.getElementById("app"));
+    </div>
+  );
+}

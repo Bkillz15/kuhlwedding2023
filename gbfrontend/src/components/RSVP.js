@@ -92,7 +92,7 @@ export default function RSVP() {
     })
 
     const [nameLookupModal, setNameLookupModal] = useState(false);
-    const [guestLookupModal, setGuestLookupModal] = useState(false);
+    const [showGuestRequest, setShowGuestRequest] = useState(true);
 
     // const [nameLookup, setNameLookup] = useState({});
     const [guestLookup, setGuestLookup] = useState({});
@@ -158,6 +158,7 @@ export default function RSVP() {
                 console.log(response.data)
                 setGuestLookup(response.data)
                 setNameLookupModal(false)
+                setShowGuestRequest(false)
 
             } catch(error) {
                 console.error("Name Check Failed", error);
@@ -221,44 +222,12 @@ export default function RSVP() {
 
     
 
-    // function guestRequest() {
-    //     return (
+    const guestRequest = (
 
-    //         <div className="flex flex-col items-center bg-sunset bg-no-repeat p-6">
-    //             <p className="my-5 p-4 bg-yellow-50 rounded-lg text-blue-700 text-xl">
-    //                 We are very excited for you all to join us. You can click below to enter your RSVP for you and those you are coming along with.
-    //             </p>
-    //             <button
-    //                 className="btn-blue" 
-    //                 onClick={() => dispatch({type : "nameSearch", visible : true})}>
-    //                 RSVP
-    //             </button>
-    //             <GuestLoginModal 
-    //                 props={{modalControl, dispatch}}
-    //                 handleSearch={handleLogin}
-    //                 />
-    //         </div>            
-    //     )
-    // }
-
-    function showGuests() {
-        return(
-        <>
-            <div className="py-2 px-0">
-                {Object.keys(guestLookup).map((key, i) => <Guestform 
-                                                                props={guestLookup[key]} 
-                                                                updateGuest={handleGuestForm} 
-                                                                key={i}/>
-                                                                )}
-            </div>
-        </>
-        )
-    }
-
-    return(
-        <div className="bg-amber-50 bg-tree bg-fixed bg-contain bg-no-repeat bg-center">
-            <Navbar />
-            <main className='mx-auto max-w-[1080px] min-h-screen'>
+            <div className="flex flex-col items-center bg-sunset bg-no-repeat p-6">
+                <p className="my-5 p-4 bg-yellow-50 rounded-lg text-blue-700 text-xl">
+                    We are very excited for you all to join us. You can click below to enter your RSVP for you and those you are coming along with.
+                </p>
                 <button
                     className="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
@@ -266,6 +235,26 @@ export default function RSVP() {
                 >
                     Start RSVP
                 </button>
+            </div>            
+    )
+
+    const showGuests = (
+            <div className="py-2 px-0">
+                {Object.keys(guestLookup).map((key, i) => <Guestform 
+                                                                props={guestLookup[key]} 
+                                                                updateGuest={handleGuestForm} 
+                                                                key={i}/>
+                                                                )}
+            </div>
+    )
+
+    return(
+        <div className="bg-amber-50 bg-tree bg-fixed bg-contain bg-no-repeat bg-center">
+            <Navbar />
+            <main className='mx-auto max-w-[1080px] min-h-screen'>
+
+                { showGuestRequest ? guestRequest : null }  
+
                 {nameLookupModal ? (
                 <>
                 <div
@@ -274,17 +263,17 @@ export default function RSVP() {
                 >
                     <div className="relative w-auto my-6 mx-auto max-w-3xl">
                     {/*content*/}
-                    <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                    <div className="relative flex flex-col w-full outline-none focus:outline-none border-t-4 border-b-4 border-double bg-red-200/90 border-amber-600 rounded-xl shadow-lg">
                         {/*header*/}
-                        <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                        <h3 className="text-2xl font-semibold">
-                            Look up your name
+                        <div className="flex items-start justify-between p-5 border-b border-solid border-blue-700 rounded-t">
+                        <h3 className="text-xl font-semibold text-blue-700">
+                            Enter Your Name
                         </h3>
                         <button
-                            className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                            className="p-1 ml-auto bg-transparent float-right leading-none  outline-none focus:outline-double"
                             onClick={() => setNameLookupModal(false)}
                         >
-                            <span className="bg-transparent text-black h-6 w-6 text-2xl block outline-none focus:outline-none">
+                            <span className="text-slate-600/70 font-bold h-6 w-6 text-2xl block outline-none focus:outline-none">
                             X
                             </span>
                         </button>
@@ -361,7 +350,7 @@ export default function RSVP() {
                 ) : null}
             
 
-                { modalControl.confirmed ?  showGuests() : null }
+                { modalControl.confirmed ?  showGuests : showGuests }
 
                 
                 
