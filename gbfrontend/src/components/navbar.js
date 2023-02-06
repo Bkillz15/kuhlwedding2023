@@ -62,13 +62,13 @@ export default function Navbar(props) {
   return(
     <div className="m-0 p-0 sticky top-0 z-20 backdrop-blur">
     <div className={'h-[75px] w-full md:bg-gradient-to-b md:from-slate-700/80 md:to-slate-700/10 p-0 m-0' + (((showNav === true) && (isMed == true))? ' bg-slate-700/60' : ' bg-gradient-to-b from-slate-700/80 to-slate-700/10')}>
-      <div className="flex flex-row justify-between max-w-[1080px] mx-auto px-0 pt-0 pb-0 md:pb-2">
+      <div className="flex flex-row justify-between max-w-[1080px] px-0 pt-0 pb-0">
         {/* Flex Container */}
         {/* <a href="/" target='_blank' rel='noreferrer'></a> _blank <= opens in new tab, noreferrer <= hides information from previous page*/} 
         {/* LOGO */}
         <div className="p-1 ml-2">
           <a href="/" rel='noreferrer'>
-            <img className="w-[60px] bg-transparent hover:opacity-70 transition duration-500 ease-in-out" src="../.././static/images/golden-tree.png" alt="BKILLZ" />
+            <img className="w-[60px] bg-transparent hover:opacity-70 transition duration-500 ease-in-out" src="gbfrontend/static/images/golden-tree.png" alt="BKILLZ" />
           </a>
         </div>
         {/* LINKS Browser*/}
@@ -117,10 +117,13 @@ export default function Navbar(props) {
         </nav>
         {/* Links Mobile */}
         
-        <div className="md:hidden space-y-2 m-4" onClick={() => setShowNav(!showNav)}>
-          <div className="w-8 h-0.5 bg-slate-700/50 rounded-full"></div>
-          <div className="w-8 h-0.5 bg-slate-700/50 rounded-full"></div>
-          <div className="w-8 h-0.5 bg-slate-700/50 rounded-full"></div>
+        <div className="flex flex-row my-3 mx-3 md:hidden bg-white/30 rounded-xl" onClick={() => setShowNav(!showNav)}>
+          <h3 className="px-3 py-3 text-slate-600 text-base font-serif font-bold">Navigation</h3>
+          <div className="flex flex-col m-2 p-1 ">
+            <div className="w-8 h-0.5 p-0 my-auto bg-slate-500/50 rounded-full"></div>
+            <div className="w-8 h-0.5 p-0 my-auto bg-slate-500/50 rounded-full"></div>
+            <div className="w-8 h-0.5 p-0 my-auto bg-slate-500/50 rounded-full"></div>
+          </div>
         </div>
 
             

@@ -56,6 +56,7 @@ export default function RSVP() {
                     ...state,
                     verified : true,
                     confirmed : false,
+                    namePromptText : action.namePromptText,
                     nameInputText : "",
                     ansInputText : "",
                     nameErrorText : "",
@@ -70,6 +71,7 @@ export default function RSVP() {
                     ...state,
                     verified : true,
                     confirmed : true,
+                    namePromptText : "Enter Your Name",
                     nameInputText : "",
                     nameErrorText : "",
                     ansErrorText : "",
@@ -85,7 +87,8 @@ export default function RSVP() {
         openModal : false,
         verified : false,
         confirmed : false,
-        nameInputText : "",
+        namePromptText : "Enter Your Name",
+        nameInputText : "Enter Your Name",
         ansInputText : "",
         nameErrorText : "",
         promptText : "",
@@ -120,6 +123,7 @@ export default function RSVP() {
             console.log(response.data)
             dispatch({
                 type: "question",
+                namePromptText : ("Welcome " + response.data.guestName + "!"),
                 promptText : response.data.skillTestingQ,
                 setMyID : response.data.guestID
             })
@@ -221,16 +225,16 @@ export default function RSVP() {
 
     const guestRequest = (
         <>
-        <article className='flex flex-row md:mx-[10%] p-0 mt-20  backdrop-saturate-[0.60] border-t-8 border-b-8 border-double border-slate-600/70 rounded-xl shadow-lg shadow-yellow-200'>
-            <div className=" w-[20%] bg-gradient-to-l from-white/80 " />
-            <div className=" w-[60%] bg-white/80">
+        <article className='flex flex-row justify-items-stretch w-[90%] md:w-[80%] p-0 mt-20 backdrop-saturate-[0.60] border-t-8 border-b-8 border-double border-slate-600/70 rounded-xl shadow-lg shadow-yellow-200'>
+            <div className="grow-0 w-[20%] bg-gradient-to-l from-white/80 " />
+            <div className="grow min-w-[60%] bg-white/80">
                 <h2 className='py-10 text-5xl grow font-bold text-center md:text-6xl md:text-center font-hw text-slate-600'>
                     Répondez s'il vous plaît
                 </h2>
             </div>
-            <div className=" w-[20%] bg-gradient-to-r from-white/80 "/>
+            <div className="grow-0 w-[20%] bg-gradient-to-r from-white/80 "/>
         </article>
-        <div className="flex flex-col mt-20 py-3 px-4 md:px-10 mx-[10%] max-w-2xl bg-white/80 rounded-2xl border-8 border-double border-slate-600/70 shadow-lg shadow-yellow-200">
+        <div className="flex flex-col w-[90%] md:w-[80%] mt-20 py-3 px-4 md:px-10 bg-white/80 rounded-2xl border-8 border-double border-slate-600/70 shadow-lg shadow-yellow-200">
             <p className="my-5 p-4 text-slate-600 text-base md:text-xl">
                 Welcome to the RSVP section. You may start your RSVP by clicking below. You will be asked to search your name and verify your identity with a special question.
                 Once verified, you can eddit your selections and submit your form to us. You will be able to come back any time to edit your choices up unitl the RSVP deadline of June 1<sup>st</sup>
@@ -261,7 +265,7 @@ export default function RSVP() {
     return(
         <div className="bg-sky-200 bg-tree-light bg-fixed bg-contain bg-no-repeat bg-center">
             <Navbar />
-            <main className='flex flex-col items-center mx-auto max-w-[1080px] min-h-screen'>
+            <main className='flex flex-col justify-items-center items-center mx-auto px-3 sm:px-4 max-w-[1080px] min-h-screen'>
 
                 { showGuestRequest ? guestRequest : null }  
 
@@ -294,7 +298,7 @@ export default function RSVP() {
                         <form id="nameEntry" className="w-full" onSubmit={(e) => handleLogin(e)}>
                             <div className="">
                                 <div className="">
-                                    <p className='min-h-[30px] m-0 px-3'>Enter Your Name</p>
+                                    <p className='min-h-[30px] m-0 px-3'>{modalControl.namePromptText}</p>
                                 </div>
                                 <div className="w-2/3">
                                     <input 
@@ -366,9 +370,9 @@ export default function RSVP() {
                 </>
                 ) : null}
             
-
+                <div className="py-4 px-2 w-full">     
                 { modalControl.confirmed ?  showGuests : null }
-
+                </div>
                 
                 
             </main>
