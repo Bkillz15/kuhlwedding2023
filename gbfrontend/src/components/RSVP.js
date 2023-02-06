@@ -22,10 +22,15 @@ export default function RSVP() {
                     ...state,
                     ansInputText : action.ansInputText
                 };
-            case "setErrorText":
+            case "setNameErrorText":
                 return {
                     ...state,
-                    errorText : action.errorText
+                    nameErrorText : action.nameErrorText
+                };
+            case "setAnsErrorText":
+                return {
+                    ...state,
+                    ansErrorText : action.ansErrorText
                 };
             case "setLoading":
                 return {
@@ -38,10 +43,11 @@ export default function RSVP() {
                     confirmed : false,
                     nameInputText : "",
                     ansInputText : "",
-                    errorText : "",
+                    nameErrorText : "",
+                    promptText : "",
+                    ansErrorText : "",
                     loading : false,
                     promptText : "",
-                    answer : "",
                     myID : "",
                 }
             }
@@ -52,10 +58,10 @@ export default function RSVP() {
                     confirmed : false,
                     nameInputText : "",
                     ansInputText : "",
-                    errorText : "",
+                    nameErrorText : "",
                     promptText : action.promptText,
+                    ansErrorText : "",
                     loading : false,
-                    answer : "",
                     myID : action.setMyID,
                 }
             }
@@ -64,12 +70,10 @@ export default function RSVP() {
                     ...state,
                     verified : true,
                     confirmed : true,
-                    title : "All Set!",
                     nameInputText : "",
-                    errorText : "",
-                    promptText : "",
+                    nameErrorText : "",
+                    ansErrorText : "",
                     loading : false,
-                    answer : "",
                 }
                 
             }   
@@ -81,34 +85,31 @@ export default function RSVP() {
         openModal : false,
         verified : false,
         confirmed : false,
-        title : "Look up Your Name",
         nameInputText : "",
         ansInputText : "",
-        errorText : "",
-        loading : false,
+        nameErrorText : "",
         promptText : "",
-        answer : "",
+        ansErrorText : "",
+        loading : false,
         myID : "",
     })
 
     const [nameLookupModal, setNameLookupModal] = useState(false);
     const [showGuestRequest, setShowGuestRequest] = useState(true);
-
-    // const [nameLookup, setNameLookup] = useState({});
     const [guestLookup, setGuestLookup] = useState({});
-    // const [guestForm, setGuestForm] = useState({});
 
 
     useEffect(() => {
         if (modalControl.errorText !== "") {
             const errorTimeout = setTimeout(() => {
-                dispatch({type: "setErrorText", errorText: ""})
+                dispatch({type: "setNameErrorText", nameErrorText: ""})
+                dispatch({type: "setAnsErrorText", ansErrorText: ""})
             }, "3000")
             //clean up finction
             return () => clearTimeout(errorTimeout) 
         }
         
-    },[modalControl.errorText])
+    },[modalControl.nameErrorText,modalControl.ansErrorText])
 
     async function handleLogin(e) {
         e.preventDefault()
@@ -126,15 +127,14 @@ export default function RSVP() {
         } catch(error) {
             console.error("Name Check Failed", error);
             if (error.response.data.hasOwnProperty("Bad Request")){
-                dispatch({ type: "setErrorText", errorText : (error.response.data["Bad Request"])})
+                dispatch({ type: "setNameErrorText", nameErrorText : (error.response.data["Bad Request"])})
             } else if (error.response.data.hasOwnProperty("Not Found")) {
-                dispatch({ type: "setErrorText", errorText : error.response.data["Not Found"]})
+                dispatch({ type: "setNameErrorText", nameErrorText : error.response.data["Not Found"]})
             } else {
-                dispatch({ type: "setErrorText", errorText : "Something went wrong ..." })
+                dispatch({ type: "setNameErrorText", nameErrorText : "Something went wrong ..." })
             }
         } finally {
             dispatch({type: "setLoading", loadingState: false})
-            console.log("finally")
         }           
         
     }
@@ -150,12 +150,9 @@ export default function RSVP() {
                         answer : modalControl.ansInputText
                     }
                 })
-
-                console.log(response.data)
                 dispatch({
                     type: "confirmed"
                 })
-                console.log(response.data)
                 setGuestLookup(response.data)
                 setNameLookupModal(false)
                 setShowGuestRequest(false)
@@ -163,34 +160,29 @@ export default function RSVP() {
             } catch(error) {
                 console.error("Name Check Failed", error);
                 if (error.response.data.hasOwnProperty("Bad Request")){
-                    dispatch({ type: "setErrorText", errorText : (error.response.data["Bad Request"])})
+                    dispatch({ type: "setAnsErrorText", ansErrorText : (error.response.data["Bad Request"])})
                 } else if (error.response.data.hasOwnProperty("Not Found")) {
-                    dispatch({ type: "setErrorText", errorText : error.response.data["Not Found"]})
+                    dispatch({ type: "setAnsErrorText", ansErrorText : error.response.data["Not Found"]})
                 } else {
-                    dispatch({ type: "setErrorText", errorText : "Something went wrong ..." })
+                    dispatch({ type: "setAnsErrorText", ansErrorText : "Something went wrong ..." })
                 }
             } finally {
                 dispatch({type: "setLoading", loadingState: false})
-                console.log("finally")
             }
         
         } else {
-            dispatch({type:"setErrorText", errorText: "Not Veririfed"})
+            dispatch({type:"setAnsErrorText", ansErrorText: "Not Veririfed"})
         }
     }
-    // TOMRROW!! UPDATE VIEW TO CHECK VALIDATION FROM DATA AND MAKE SURE ID INPUT IS LOGGED USER NOT THE USER TO BE UPDATED
-    async function handleSubmit(guestID) {
+    
+    async function handleSubmit(guestID,myID) {
         if (modalControl.verified === true) {
             try {
-                console.log("SENDING")
-                console.log(typeof(guestLookup[guestID]))
                 const patchData = guestLookup[guestID]
                 patchData.validation = modalControl.ansInputText
-                console.log(modalControl.myID)
+                console.log(myID)
                 console.log(patchData)
-                const response = await axios.patch("/api/update-guest" + "?id=" + guestID , patchData)
-                console.log("Success")
-                console.log(response.data)
+                const response = await axios.patch("/api/update-guest" + "?id=" + myID , patchData)
                 setGuestLookup(prevState => ({...prevState, [guestID] : response.data}))
             } catch(error) {
                 if (error.response) {
@@ -214,28 +206,46 @@ export default function RSVP() {
         
     }
 
+    function handleCloseModal() {
+        setNameLookupModal(false)
+        dispatch({type: "nameSearch"})
+    }
+
     function handleGuestForm(itemUpdate, guestID) {
         setGuestLookup(prevState => ({...prevState, [guestID] : itemUpdate}));
-        handleSubmit(guestID)
+        handleSubmit(guestID,modalControl.myID)
         console.log("HERE!!")
     }
 
     
 
     const guestRequest = (
-
-            <div className="flex flex-col items-center bg-sunset bg-no-repeat p-6">
-                <p className="my-5 p-4 bg-yellow-50 rounded-lg text-blue-700 text-xl">
-                    We are very excited for you all to join us. You can click below to enter your RSVP for you and those you are coming along with.
-                </p>
-                <button
-                    className="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                    type="button"
-                    onClick={() => setNameLookupModal(true)}
-                >
-                    Start RSVP
-                </button>
-            </div>            
+        <>
+        <article className='flex flex-row md:mx-[10%] p-0 mt-20  backdrop-saturate-[0.60] border-t-8 border-b-8 border-double border-slate-600/70 rounded-xl shadow-lg shadow-yellow-200'>
+            <div className=" w-[20%] bg-gradient-to-l from-white/80 " />
+            <div className=" w-[60%] bg-white/80">
+                <h2 className='py-10 text-5xl grow font-bold text-center md:text-6xl md:text-center font-hw text-slate-600'>
+                    Répondez s'il vous plaît
+                </h2>
+            </div>
+            <div className=" w-[20%] bg-gradient-to-r from-white/80 "/>
+        </article>
+        <div className="flex flex-col mt-20 py-3 px-4 md:px-10 mx-[10%] max-w-2xl bg-white/80 rounded-2xl border-8 border-double border-slate-600/70 shadow-lg shadow-yellow-200">
+            <p className="my-5 p-4 text-slate-600 text-base md:text-xl">
+                Welcome to the RSVP section. You may start your RSVP by clicking below. You will be asked to search your name and verify your identity with a special question.
+                Once verified, you can eddit your selections and submit your form to us. You will be able to come back any time to edit your choices up unitl the RSVP deadline of June 1<sup>st</sup>
+            </p>
+            <button
+                className={"self-center bg-sky-300 text-slate-600 border-2 py-3 px-6 mb-6 border-slate-600/70 active:bg-sky-600 focus:border-2 focus:border-rose-100 font-bold uppercase text-xl rounded-xl shadow shadow-yellow-100 hover:shadow-lg " +
+                " hover:shadow-yellow-100 outline-none focus:outline-none ease-linear transition-all duration-150 " + 
+                " disabled:bg-sky-100/80 disabled:text-slate-300 disabled:hover:shadow-none disabled:shadow-none "}
+                type="button"
+                onClick={() => setNameLookupModal(true)}
+            >
+                Start RSVP
+            </button>
+        </div>      
+        </>      
     )
 
     const showGuests = (
@@ -249,45 +259,46 @@ export default function RSVP() {
     )
 
     return(
-        <div className="bg-amber-50 bg-tree bg-fixed bg-contain bg-no-repeat bg-center">
+        <div className="bg-sky-200 bg-tree-light bg-fixed bg-contain bg-no-repeat bg-center">
             <Navbar />
-            <main className='mx-auto max-w-[1080px] min-h-screen'>
+            <main className='flex flex-col items-center mx-auto max-w-[1080px] min-h-screen'>
 
                 { showGuestRequest ? guestRequest : null }  
 
                 {nameLookupModal ? (
                 <>
                 <div
-                    className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
-                    onClick={(e) => {(nameLookupModal ===true && e.currentTarget === e.target) ? setNameLookupModal(false): null}}
+                    className="justify-center top-20 sm:top-32 overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+                    onClick={(e) => {(nameLookupModal ===true && e.currentTarget === e.target) ? handleCloseModal() : null}}
                 >
-                    <div className="relative w-auto my-6 mx-auto max-w-3xl">
+                    {/* MODAL */}
+                    <div className="relative w-auto my-6 mx-auto max-w-[300px] sm:max-w-lg">
                     {/*content*/}
-                    <div className="relative flex flex-col w-full outline-none focus:outline-none border-t-4 border-b-4 border-double bg-red-200/90 border-amber-600 rounded-xl shadow-lg">
+                    <div className="relative flex flex-col w-full h-[435px] outline-none focus:outline-none border-t-8 border-b-8 border-double bg-white/90 border-slate-600/70 rounded-2xl shadow-lg shadow-yellow-100">
                         {/*header*/}
-                        <div className="flex items-start justify-between p-5 border-b border-solid border-blue-700 rounded-t">
-                        <h3 className="text-xl font-semibold text-blue-700">
-                            Enter Your Name
+                        <div className="flex items-start justify-between px-8 py-4 border-b-2 border-solid border-slate-600/70 rounded-t">
+                        <h3 className="text-2xl pl-3 font-semibold text-slate-600">
+                            Guest Lookup
                         </h3>
                         <button
                             className="p-1 ml-auto bg-transparent float-right leading-none  outline-none focus:outline-double"
-                            onClick={() => setNameLookupModal(false)}
-                        >
+                            onClick={() => handleCloseModal()}
+                        >       
                             <span className="text-slate-600/70 font-bold h-6 w-6 text-2xl block outline-none focus:outline-none">
                             X
                             </span>
                         </button>
                         </div>
                         {/*body*/}
-                        <div className="relative p-6 flex-auto">
-                        <form id="nameEntry" className="w-full max-w-sm" onSubmit={(e) => handleLogin(e)}>
-                            <div className="px-4">
+                        <div className="relative px-8 py-4 flex-auto">
+                        <form id="nameEntry" className="w-full" onSubmit={(e) => handleLogin(e)}>
+                            <div className="">
                                 <div className="">
-                                    <p className='min-h-[30px] m-0'>{modalControl.promptText}</p>
+                                    <p className='min-h-[30px] m-0 px-3'>Enter Your Name</p>
                                 </div>
                                 <div className="w-2/3">
                                     <input 
-                                        className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 my-1 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" 
+                                        className="bg-sky-100 appearance-none border-2 border-sky-400/30 rounded-xl w-full py-2 px-4 my-1 text-slate-600 leading-tight focus:outline-none focus:bg-white focus:border-rose-300" 
                                         id="nameText" 
                                         type="text"
                                         requred="true"
@@ -296,52 +307,58 @@ export default function RSVP() {
                                         onChange={(e) => dispatch({type: 'setNameInputText', nameInputText : e.target.value})}
                                     />
                                     </div>
-                                <p className='min-h-[30px] m-0'>{modalControl.errorText}</p>
+                                <p className='min-h-[30px] m-0 px-3'>{modalControl.nameErrorText}</p>
                             </div>
                             <button
                             type="submit"
-                            className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                        >
-                            Search
-                        </button>
+                            className={"bg-sky-300 text-slate-600 active:bg-sky-600 focus:border-2 focus:border-rose-300 font-bold uppercase text-sm w-1/3 py-2 rounded-xl shadow shadow-yellow-100 hover:shadow-lg " +
+                                " hover:shadow-yellow-100 outline-none focus:outline-none ease-linear transition-all duration-150 " + 
+                                " disabled:bg-sky-100/80 disabled:text-slate-300 disabled:hover:shadow-none disabled:shadow-none"}
+                            disabled={modalControl.verified || modalControl.loading}
+                            >
+                                Search
+                            </button>
                         </form>
-                        <form id="ansEntry" className={"w-full max-w-sm " + (modalControl.verified ? null : 'hidden')} onSubmit={(e) => handleAns(e)}>
-                            <div className="px-4">
+                        <form id="ansEntry" className={"w-full mt-4 " + (modalControl.verified ? null : 'hidden')} onSubmit={(e) => handleAns(e)}>
+                            <div className="">
                                 <div className="">
-                                    <p className='min-h-[30px] m-0'>{modalControl.promptText}</p>
+                                    <p className='min-h-[30px] m-0 px-3'>{modalControl.promptText}</p>
                                 </div>
                                 <div className="w-2/3">
                                     <input 
-                                        className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 my-1 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" 
-                                        id="nameText" 
+                                        className="bg-sky-100 appearance-none border-2 border-sky-400/30 rounded-xl w-full py-2 px-4 my-1 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-rose-300" 
+                                        id="errorText" 
                                         type="text"
                                         requred="true"
-                                        placeholder="Enter Name"
+                                        placeholder="Enter Answer"
                                         value={modalControl.inputText}
                                         onChange={(e) => dispatch({type: 'setAnsInputText', ansInputText : e.target.value})}
                                     />
                                     </div>
-                                <p className='min-h-[30px] m-0'>{modalControl.errorText}</p>
+                                <p className='min-h-[30px] m-0 px-3'>{modalControl.ansErrorText}</p>
                             </div>
                             <button
                             type="submit"
-                            className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                        >
-                            Submit
-                        </button>
+                            className={"bg-sky-300 text-slate-600 active:bg-sky-600 focus:border-2 focus:border-rose-100 font-bold uppercase text-sm w-1/3 py-2 rounded-xl shadow shadow-yellow-100 hover:shadow-lg " +
+                                " hover:shadow-yellow-100 outline-none focus:outline-none ease-linear transition-all duration-150 " + 
+                                " disabled:bg-sky-100/80 disabled:text-slate-300 disabled:hover:shadow-none disabled:shadow-none"}
+                            disabled={modalControl.loading}
+                            >
+                                Submit
+                            </button>
                         </form>
                         </div>
                         {/*footer*/}
-                        <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+                        {/* <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
                         <button
-                            className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                            className="text-slate-600 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                             type="button"
                             onClick={() => setNameLookupModal(false)}
                         >
                             Close
                         </button>
                         
-                        </div>
+                        </div> */}
                     </div>
                     </div>
                 </div>
@@ -350,7 +367,7 @@ export default function RSVP() {
                 ) : null}
             
 
-                { modalControl.confirmed ?  showGuests : showGuests }
+                { modalControl.confirmed ?  showGuests : null }
 
                 
                 
@@ -359,9 +376,3 @@ export default function RSVP() {
     )
 
 }
-
-{/* <GuestLoginModal 
-props={{modalControl, dispatch}}
-handleSearch={handleLogin}
-/> */}
-
