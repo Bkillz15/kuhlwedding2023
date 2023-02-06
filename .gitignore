@@ -10,6 +10,7 @@
 # production
 /build
 /gbfrontend/node_modules
+/gbfrontned/staticfiles
 
 # misc
 .DS_Store

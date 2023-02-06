@@ -8,8 +8,6 @@ export default function Navbar(props) {
   const [showNav, setShowNav] = useState(false);
   const isMed = useMediaQuery({query : '(max-width: 768px)'});
   const pathNow = useLocation();
-
-  console.log(pathNow.pathname);
   
   useEffect(() => {
 
