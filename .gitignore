@@ -8,9 +8,8 @@
 /coverage
 
 # production
-/build
 /gbfrontend/node_modules
-/gbfrontned/staticfiles
+/staticfiles
 
 # misc
 .DS_Store
@@ -22,3 +21,4 @@ info.txt
 
 # local db
 db.sqlite3
+
