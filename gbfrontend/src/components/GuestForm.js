@@ -138,7 +138,7 @@ export default function Guestform({props , updateGuest}) {
                         YES
                     </button>
                     <button className=  {"py-1 mx-3 my-1 border-2 grow min-w-[80px] text-lg font-serif rounded-xl ease-linear transition-all duration-150 sm:hover:scale-105 active:bg-sky-600 focus:border-slate-700 border-slate-600/70 " +
-                                        (rickBus ? "bg-sky-300 text-slate-600" : "bg-sky-200 text-slate-400")}
+                                        (!rickBus ? "bg-sky-300 text-slate-600" : "bg-sky-200 text-slate-400")}
                         onClick={() => setRickBus(false)}
                         type="button">
                         NO

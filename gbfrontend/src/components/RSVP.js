@@ -237,7 +237,8 @@ export default function RSVP() {
         <div className="flex flex-col w-[90%] md:w-[80%] mt-20 py-3 px-4 md:px-10 bg-white/80 rounded-2xl border-8 border-double border-slate-600/70 shadow-lg shadow-yellow-200">
             <p className="my-5 p-4 text-slate-600 text-base md:text-xl">
                 Welcome to the RSVP section. You may start your RSVP by clicking below. You will be asked to search your name and verify your identity with a special question.
-                Once verified, you can eddit your selections and submit your form to us. You will be able to come back any time to edit your choices up unitl the RSVP deadline of June 1<sup>st</sup>
+                Once verified, you can eddit your selections and submit your form to us. You will be able to come back any time to edit your choices up unitl the 
+                <span className="relative font-bold font-serif text-xl md:text-2xl text-sky-700"> RSVP deadline of June 1<sup>st</sup></span>
             </p>
             <button
                 className={"self-center bg-sky-300 text-slate-600 border-2 py-3 px-6 mb-6 border-slate-600/70 active:bg-sky-600 focus:border-2 focus:border-rose-100 font-bold uppercase text-xl rounded-xl shadow shadow-yellow-100 hover:shadow-lg " +
