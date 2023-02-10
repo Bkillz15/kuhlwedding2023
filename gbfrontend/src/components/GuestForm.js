@@ -48,7 +48,7 @@ export default function Guestform({props , updateGuest}) {
                 <p className="p-2 mx-3 grow text-slate-600 text-base">
                     The pork is a fine roast with many herbs and spices. Served with cherry potatoes and a russet salad
                 </p>
-                <button className={"py-1 mx-auto my-2 w-[60%] border-2 text-lg font-serif rounded-xl ease-linear transition-all duration-150 sm:hover:scale-105 active:bg-sky-600 focus:border-slate-700 border-slate-600/70 " +
+                <button className={"py-1 mx-auto my-2 w-[60%] border-2 text-lg font-serif rounded-xl ease-linear transition-all duration-150 sm:hover:scale-105 active:bg-sky-600 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 border-slate-600/70 " +
                     (mainCourse === "Pork" ? "bg-sky-300 text-slate-600" : "bg-sky-200 text-slate-400")}
                     onClick={() => setMainCourse("Pork")}
                     type="button">
@@ -59,7 +59,7 @@ export default function Guestform({props , updateGuest}) {
                 <p className="p-2 mx-3 grow text-slate-600 text-base">
                     Stokely is proud to provide their finest boiled chicken breast with an optional side of salt ($3.00 extra)
                 </p>
-                <button className={"py-1 mx-auto my-2 w-[60%] border-2 text-lg font-serif rounded-xl ease-linear transition-all duration-150 sm:hover:scale-105 active:bg-sky-600 focus:border-slate-700 border-slate-600/70 " +
+                <button className={"py-1 mx-auto my-2 w-[60%] border-2 text-lg font-serif rounded-xl ease-linear transition-all duration-150 sm:hover:scale-105 active:bg-sky-600 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 border-slate-600/70 " +
                     (mainCourse === "Chicken" ? "bg-sky-300 text-slate-600" : "bg-sky-200 text-slate-400")}
                     onClick={() => setMainCourse("Chicken")}
                     type="button">
@@ -70,7 +70,7 @@ export default function Guestform({props , updateGuest}) {
                 <p className="p-2 mx-3 grow text-slate-600 text-base">
                     Milk soup with some eggy stuff. No gabagoooooo
                 </p>
-                <button className={"py-1 mx-auto my-2 w-[60%] border-2 text-lg font-serif rounded-xl ease-linear transition-all duration-150 sm:hover:scale-105 active:bg-sky-600 focus:border-slate-700 border-slate-600/70 " +
+                <button className={"py-1 mx-auto my-2 w-[60%] border-2 text-lg font-serif rounded-xl ease-linear transition-all duration-150 sm:hover:scale-105 active:bg-sky-600 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 border-slate-600/70 " +
                     (mainCourse === "Veggie" ? "bg-sky-300 text-slate-600" : "bg-sky-200 text-slate-400")}
                     onClick={() => setMainCourse("Veggie")}
                     type="button">
@@ -81,7 +81,7 @@ export default function Guestform({props , updateGuest}) {
                 <p className="p-2 mx-3 grow text-slate-600 text-base">
                     Leafs
                 </p>
-                <button className={"py-1 mx-auto my-2 w-[60%] border-2 text-lg font-serif rounded-xl ease-linear transition-all duration-150 sm:hover:scale-105 active:bg-sky-600 focus:border-slate-700 border-slate-600/70 " +
+                <button className={"py-1 mx-auto my-2 w-[60%] border-2 text-lg font-serif rounded-xl ease-linear transition-all duration-150 sm:hover:scale-105 active:bg-sky-600 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 border-slate-600/70 " +
                     (mainCourse === "Vegan" ? "bg-sky-300 text-slate-600" : "bg-sky-200 text-slate-400")}
                     onClick={() => setMainCourse("Vegan")}
                     type="button">
@@ -111,13 +111,13 @@ export default function Guestform({props , updateGuest}) {
                     Are you interested in spending the night at Stokely? There are a number of beds available. Details will be available closer to the date.
                 </p>
                 <div className="flex flex-row flex-wrap mb-3 place-items-stretch">
-                    <button className=  {"py-1 mx-3 my-1 border-2 grow min-w-[80px] text-lg font-serif rounded-xl ease-linear transition-all duration-150 sm:hover:scale-105 active:bg-sky-600 focus:border-slate-700 border-slate-600/70 " +
+                    <button className=  {"py-1 mx-3 my-1 border-2 grow min-w-[80px] text-lg font-serif rounded-xl ease-linear transition-all duration-150 sm:hover:scale-105 active:bg-sky-600 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 border-slate-600/70 " +
                                         (sleepover ? "bg-sky-300 text-slate-600" : "bg-sky-200 text-slate-400")}
                         onClick={() => setSleepover(true)}
                         type="button">
                         YES
                     </button>
-                    <button className=  {"py-1 mx-3 my-1 border-2 grow min-w-[80px] text-lg font-serif rounded-xl ease-linear transition-all duration-150 sm:hover:scale-105 active:bg-sky-600 focus:border-slate-700 border-slate-600/70 " +
+                    <button className=  {"py-1 mx-3 my-1 border-2 grow min-w-[80px] text-lg font-serif rounded-xl ease-linear transition-all duration-150 sm:hover:scale-105 active:bg-sky-600 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 border-slate-600/70 " +
                                         (!sleepover ? "bg-sky-300 text-slate-600" : "bg-sky-200 text-slate-400")}
                         onClick={() => setSleepover(false)}
                         type="button">
@@ -131,13 +131,13 @@ export default function Guestform({props , updateGuest}) {
                     We are looking to book transportation back to town. Would you be interested in a ride? We will set a couple drop off locations around town depending who is on the bus.
                 </p>
                 <div className="flex flex-row flex-wrap mb-3 place-items-stretch">
-                    <button className=  {"py-1 mx-3 my-1 border-2 grow min-w-[80px] text-lg font-serif rounded-xl ease-linear transition-all duration-150 sm:hover:scale-105 active:bg-sky-600 focus:border-slate-700 border-slate-600/70 " +
+                    <button className=  {"py-1 mx-3 my-1 border-2 grow min-w-[80px] text-lg font-serif rounded-xl ease-linear transition-all duration-150 sm:hover:scale-105 active:bg-sky-600 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 border-slate-600/70 " +
                                         (rickBus ? "bg-sky-300 text-slate-600" : "bg-sky-200 text-slate-400")}
                         onClick={() => setRickBus(true)}
                         type="button">
                         YES
                     </button>
-                    <button className=  {"py-1 mx-3 my-1 border-2 grow min-w-[80px] text-lg font-serif rounded-xl ease-linear transition-all duration-150 sm:hover:scale-105 active:bg-sky-600 focus:border-slate-700 border-slate-600/70 " +
+                    <button className=  {"py-1 mx-3 my-1 border-2 grow min-w-[80px] text-lg font-serif rounded-xl ease-linear transition-all duration-150 sm:hover:scale-105 active:bg-sky-600 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 border-slate-600/70 " +
                                         (!rickBus ? "bg-sky-300 text-slate-600" : "bg-sky-200 text-slate-400")}
                         onClick={() => setRickBus(false)}
                         type="button">
@@ -193,12 +193,12 @@ export default function Guestform({props , updateGuest}) {
     const showGuestForm = (
 
         <div className="grid gap-3 grid-flow-row grid-cols-1 sm:grid-cols-2 my-3 sm:mx-3">
-            <button className={"w-[90%] py-2 mx-auto sm:my-3 font-serif font-semibold ease-linear transition-all duration-150 shadow shadow-slate-600 sm:hover:scale-105 active:bg-sky-600 focus:border-slate-700 rounded-xl border-2 " + (!coming ? "bg-sky-300 text-slate-600  border-slate-600/70 " : "bg-sky-200 text-slate-400  border-slate-600/70")}
+            <button className={"w-[90%] py-2 mx-auto sm:my-3 font-serif font-semibold ease-linear transition-all duration-150 shadow shadow-slate-600 sm:hover:scale-105 active:bg-sky-600 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 rounded-xl border-2 " + (!coming ? "bg-sky-300 text-slate-600  border-slate-600/70 " : "bg-sky-200 text-slate-400  border-slate-600/70")}
                 onClick={() => setComing(false)}
                 type="button">
                 Not Interested
             </button>
-            <button className={"w-[90%] py-2 mx-auto sm:my-3 font-serif font-semibold ease-linear transition-all duration-150 shadow shadow-slate-600 sm:hover:scale-105 active:bg-sky-600 focus:border-slate-700 rounded-xl border-2 " + (coming ? "bg-sky-300 text-slate-600  border-slate-600/70 " : "bg-sky-200 text-slate-400  border-slate-600/70")}
+            <button className={"w-[90%] py-2 mx-auto sm:my-3 font-serif font-semibold ease-linear transition-all duration-150 shadow shadow-slate-600 sm:hover:scale-105 active:bg-sky-600 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 rounded-xl border-2 " + (coming ? "bg-sky-300 text-slate-600  border-slate-600/70 " : "bg-sky-200 text-slate-400  border-slate-600/70")}
                 onClick={() => setComing(true)}
                 type="button">
                 I'm Coming!
@@ -206,7 +206,7 @@ export default function Guestform({props , updateGuest}) {
             
             {coming ? showOptions : null}
             
-            <button className={"w-[90%] py-1 mx-auto sm:my-3 text-xl font-serif font-semibold ease-linear transition-all  sm:hover:-translate-y-0.5 rounded-xl border-2 active:bg-sky-600 focus:border-slate-700 border-slate-600/70 bg-sky-300 text-slate-600"}
+            <button className={"w-[90%] py-1 mx-auto sm:my-3 text-xl font-serif font-semibold ease-linear transition-all  sm:hover:-translate-y-0.5 rounded-xl border-2 active:bg-sky-600 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 border-slate-600/70 bg-sky-300 text-slate-600"}
                 onClick={() => handleGuestSubmit()}>
                 SUBMIT
             </button>
@@ -239,8 +239,8 @@ export default function Guestform({props , updateGuest}) {
                 }
                 <button
                 onClick={() => setEdit(true)} 
-                className={"self-center bg-sky-300 text-slate-600 font-serif border-2 py-1 px-6 my-4 ml-3 border-slate-600/70 active:bg-sky-600 focus:border-2 focus:border-rose-100 font-bold uppercase text-base rounded-xl shadow shadow-yellow-100 hover:shadow-lg " +
-                    " hover:shadow-yellow-100 outline-none focus:outline-none ease-linear transition-all duration-150 "}
+                className={"self-center bg-sky-300 text-slate-600 font-serif border-2 py-1 px-6 my-4 ml-3 border-slate-600/70 active:bg-sky-600 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 " +
+                    "font-semibold text-base rounded-xl shadow shadow-emerald-800 hover:shadow-lg hover:shadow-emerald-800 ease-linear transition-all duration-150 "}
                     >
                     EDIT
                 </button>

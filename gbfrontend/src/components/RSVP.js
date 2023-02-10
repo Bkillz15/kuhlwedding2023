@@ -241,9 +241,9 @@ export default function RSVP() {
                 <span className="relative font-bold font-serif text-xl md:text-2xl text-sky-700"> RSVP deadline of June 1<sup>st</sup></span>
             </p>
             <button
-                className={"self-center bg-sky-300 text-slate-600 border-2 py-3 px-6 mb-6 border-slate-600/70 active:bg-sky-600 focus:border-2 focus:border-rose-100 font-bold uppercase text-xl rounded-xl shadow shadow-yellow-100 hover:shadow-lg " +
-                " hover:shadow-yellow-100 outline-none focus:outline-none ease-linear transition-all duration-150 " + 
-                " disabled:bg-sky-100/80 disabled:text-slate-300 disabled:hover:shadow-none disabled:shadow-none "}
+                className={"bg-sky-300 text-slate-600 active:bg-sky-600 font-serif font-semibold text-xl py-3 px-6 mb-6 rounded-xl border-2 border-slate-600/70 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 " +
+                " shadow shadow-emerald-800 hover:shadow-lg hover:shadow-emerald-800 ease-linear transition-all duration-150 " + 
+                " disabled:bg-sky-100/80 disabled:text-slate-300 disabled:hover:shadow-none disabled:shadow-none disabled:border-none"}
                 type="button"
                 onClick={() => setNameLookupModal(true)}
             >
@@ -303,7 +303,7 @@ export default function RSVP() {
                                 </div>
                                 <div className="w-2/3">
                                     <input 
-                                        className="bg-sky-100 appearance-none border-2 border-sky-400/30 rounded-xl w-full py-2 px-4 my-1 text-slate-600 leading-tight focus:outline-none focus:bg-white focus:border-rose-300" 
+                                        className="bg-sky-100 appearance-none border-2 border-sky-400/30 rounded-xl w-full py-2 px-4 my-1 text-slate-600 leading-tight focus:bg-white focus:border-emerald-400" 
                                         id="nameText" 
                                         type="text"
                                         requred="true"
@@ -316,9 +316,10 @@ export default function RSVP() {
                             </div>
                             <button
                             type="submit"
-                            className={"bg-sky-300 text-slate-600 active:bg-sky-600 focus:border-2 focus:border-rose-300 font-bold uppercase text-sm w-1/3 py-2 rounded-xl shadow shadow-yellow-100 hover:shadow-lg " +
-                                " hover:shadow-yellow-100 outline-none focus:outline-none ease-linear transition-all duration-150 " + 
-                                " disabled:bg-sky-100/80 disabled:text-slate-300 disabled:hover:shadow-none disabled:shadow-none"}
+                            className={"bg-sky-300 text-slate-600 active:bg-sky-600 font-semibold text-base w-1/3 py-2 rounded-xl border-2 border-slate-600/70 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 " +
+                                "shadow shadow-emerald-800 hover:shadow-lg hover:shadow-emerald-800 ease-linear transition-all duration-150 " +
+                                " hover:shadow-lg hover:shadow-emerald-800 outline-none focus:outline-none " + 
+                                " disabled:bg-sky-100/80 disabled:text-slate-300 disabled:hover:shadow-none disabled:shadow-none disabled:border-none"}
                             disabled={modalControl.verified || modalControl.loading}
                             >
                                 Search
@@ -331,7 +332,7 @@ export default function RSVP() {
                                 </div>
                                 <div className="w-2/3">
                                     <input 
-                                        className="bg-sky-100 appearance-none border-2 border-sky-400/30 rounded-xl w-full py-2 px-4 my-1 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-rose-300" 
+                                        className="bg-sky-100 appearance-none border-2 border-sky-400/30 rounded-xl w-full py-2 px-4 my-1 text-gray-700 leading-tight focus:bg-white focus:border-emerald-400" 
                                         id="errorText" 
                                         type="text"
                                         requred="true"
@@ -344,9 +345,10 @@ export default function RSVP() {
                             </div>
                             <button
                             type="submit"
-                            className={"bg-sky-300 text-slate-600 active:bg-sky-600 focus:border-2 focus:border-rose-100 font-bold uppercase text-sm w-1/3 py-2 rounded-xl shadow shadow-yellow-100 hover:shadow-lg " +
-                                " hover:shadow-yellow-100 outline-none focus:outline-none ease-linear transition-all duration-150 " + 
-                                " disabled:bg-sky-100/80 disabled:text-slate-300 disabled:hover:shadow-none disabled:shadow-none"}
+                            className={"bg-sky-300 text-slate-600 active:bg-sky-600 font-semibold text-base w-1/3 py-2 rounded-xl border-2 border-slate-600/70 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 " +
+                            "shadow shadow-emerald-800 hover:shadow-lg hover:shadow-emerald-800 ease-linear transition-all duration-150 " +
+                            " hover:shadow-lg hover:shadow-emerald-800 outline-none focus:outline-none " + 
+                            " disabled:bg-sky-100/80 disabled:text-slate-300 disabled:hover:shadow-none disabled:shadow-none disabled:border-none"}
                             disabled={modalControl.loading}
                             >
                                 Submit

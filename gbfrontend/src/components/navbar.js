@@ -62,7 +62,7 @@ export default function Navbar(props) {
   return(
     <div className="m-0 p-0 sticky top-0 z-20 backdrop-blur">
     <div className={'h-[75px] w-full md:bg-gradient-to-b md:from-slate-700/80 md:to-slate-700/10 p-0 m-0' + (((showNav === true) && (isMed == true))? ' bg-slate-700/60' : ' bg-gradient-to-b from-slate-700/80 to-slate-700/10')}>
-      <div className="flex flex-row justify-between max-w-[1080px] px-0 pt-0 pb-0">
+      <div className="flex flex-row justify-between max-w-[1080px] mx-auto px-0 pt-0 pb-0">
         {/* Flex Container */}
         {/* <a href="/" target='_blank' rel='noreferrer'></a> _blank <= opens in new tab, noreferrer <= hides information from previous page*/} 
         {/* LOGO */}
