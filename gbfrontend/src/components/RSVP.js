@@ -1,8 +1,11 @@
 import React from "react";
 import { useState, useEffect, useReducer } from "react";
+import axios from "axios";
+
 import Navbar from "./navbar";
 import Guestform from "./GuestForm";
-import axios from "axios";
+import Footer from "./footer";
+
 
 export default function RSVP() {
     
@@ -237,7 +240,7 @@ export default function RSVP() {
         <div className="flex flex-col w-[90%] md:w-[80%] mt-20 py-3 px-4 md:px-10 bg-white/80 rounded-2xl border-8 border-double border-slate-600/70 shadow-lg shadow-yellow-200">
             <p className="my-5 p-4 text-slate-600 text-base md:text-xl">
                 Welcome to the RSVP section. You may start your RSVP by clicking below. You will be asked to search your name and verify your identity with a special question.
-                Once verified, you can eddit your selections and submit your form to us. You will be able to come back any time to edit your choices up unitl the 
+                Once verified, you can edit your selections and submit your form to us. You will be able to come back any time to edit your choices up until the 
                 <span className="relative font-bold font-serif text-xl md:text-2xl text-sky-700"> RSVP deadline of June 1<sup>st</sup></span>
             </p>
             <button
@@ -379,6 +382,7 @@ export default function RSVP() {
                 
                 
             </main>
+            <Footer />
         </div>
     )
 

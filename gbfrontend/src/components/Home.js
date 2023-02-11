@@ -2,6 +2,7 @@ import React from "react";
 import {useEffect} from "react";
 import Countdown from 'react-countdown';
 import Navbar from "./navbar";
+import Footer from "./footer";
 
 export default function Home(props) {
 
@@ -21,22 +22,22 @@ export default function Home(props) {
       // Render a countdown
       return (
         <div className="grid grid-cols-4 grid-rows-3 gap-x-4 gap-y-2 m-y-auto mx-2 md:mx-4 items-center justify-items-center ">
-          <div className="bg-slate-700/80 px-3 py-1 m-0 w-full border-x-4 border-double border-amber-300 rounded-xl shadow-md shadow-slate-700">
+          <div className="bg-slate-700/80 md:px-3 py-1 m-0 w-full border-x-4 border-double border-amber-300 rounded-xl shadow-md shadow-slate-700">
             <p className="text-sm md:text-base text-slate-100 text-center font-body ">
               DAYS
             </p>
           </div>
-          <div className="bg-slate-700/80 px-3 py-1 m-0 w-full border-x-4 border-double border-amber-300 rounded-xl shadow-md shadow-slate-700">
+          <div className="bg-slate-700/80 md:px-3 py-1 m-0 w-full border-x-4 border-double border-amber-300 rounded-xl shadow-md shadow-slate-700">
             <p className="text-sm md:text-base text-slate-100 text-center font-body ">
               HOURS
             </p>
           </div>
-          <div className="bg-slate-700/80 px-3 py-1 m-0 w-full border-x-4 border-double border-amber-300 rounded-xl shadow-md shadow-slate-700">
+          <div className="bg-slate-700/80 md:px-3 py-1 m-0 w-full border-x-4 border-double border-amber-300 rounded-xl shadow-md shadow-slate-700">
             <p className="text-sm md:text-base text-slate-100 text-center font-body ">
               MINUTES
             </p>
           </div>
-          <div className="bg-slate-700/80 px-3 py-1 m-0 w-full border-x-4 border-double border-amber-300 rounded-xl shadow-md shadow-slate-700">
+          <div className="bg-slate-700/80 md:px-3 py-1 m-0 w-full border-x-4 border-double border-amber-300 rounded-xl shadow-md shadow-slate-700">
             <p className="text-sm md:text-base text-slate-100 text-center font-body ">
               SECONDS
             </p>
@@ -105,7 +106,7 @@ export default function Home(props) {
                 className=""
                 />
             </div>
-            <article className='flex flex-row justify-center sm:mx-[10%] my-10 py-10 px-0 bg-white/90 backdrop-saturate-[0.60] border-t-8 border-b-8 border-double border-slate-600/70 rounded-xl shadow-lg shadow-emerald-800'>
+            <article className='flex flex-row justify-center sm:mx-[10%] mt-20 py-10 px-0 bg-white/90 backdrop-saturate-[0.60] border-t-8 border-b-8 border-double border-slate-600/70 rounded-xl shadow-lg shadow-emerald-800'>
               <Countdown 
                 
                 date={ weddingTime }
@@ -113,39 +114,40 @@ export default function Home(props) {
               />
             </article>
             <article className='sm:mx-[10%] px-[10%] bg-gradient-to-r mt-20 py-10 from-white/40 via-white/90 to-white-40 backdrop-saturate-[0.60] rounded-2xl border-8 border-double border-slate-600/70 shadow-lg shadow-emerald-800'>
-              <h4 className='text-3xl font-bold mt-4 text-center sm:text-left font-serif text-slate-600'>
+              <h4 className='text-3xl font-bold m-0 text-left font-serif text-slate-600'>
                 A magical night in Goulais River
               </h4>
-              <h4 className='text-2xl mt-4 text-center sm:text-left font-serif text-slate-600'>
+              <h4 className='text-2xl mt-4 text-left font-serif text-slate-600'>
                 Friday August 11<sup>th</sup>, 2023
               </h4>
-              <h4 className='text-xl mt-4 text-center sm:text-left font-serif text-slate-600'>
+              <h4 className='text-xl mt-4 text-left font-serif text-slate-600'>
                 Please arrive for 3:30 PM 
               </h4>
-              <h4 className="text-xl mt-3 text-center sm:text-left font-serif text-slate-600">
+              <h4 className="text-xl mt-3 text-left font-serif text-slate-600">
                 Ceremony and reception held at:
               </h4>
-              <h4 className="mt-2 text-2xl font-bold text-center sm:text-left font-serif text-slate-600">
+              <h4 className="mt-2 text-2xl font-bold text-left font-serif text-slate-600">
                 Stokely Creek Lodge
               </h4>
-              <h4 className="text-xl mt-2 text-center sm:text-left font-serif text-slate-600">
+              <h4 className="text-xl mt-2 text-left font-serif text-slate-600">
                194 Pickard Rd,<br/>Goulais River,ON<br/>P0S 1E0
               </h4>
             </article>
           </section>
-           <hr className='mx-auto bg-slate-600 bg w-1/2 h-2 rounded border-none shadow-lg shadow-emerald-800'/>
-          <section className='flex flex-col-reverse justify-center sm:flex-row p-6 items-center gap-8 mb-12'>
-            <article className=''>
-              <p className='text-2xl mt-4 sm:px-[20%] text-center sm:text-left text-slate-600 '>
-                We have decided to host our celebration at Stokely Creek Lodge in gorgeous Goulais River, Ontario
-                so that the party will not stop. Be peppered for some serious debauchery!
-              </p>
-              <p className='text-2xl mt-4 text-center sm:text-left text-blue-400'>
-                Many of you are traveling from afar so we have put together this handy website for your convenience
+           <hr className='mx-auto mt-20 bg-slate-600 bg w-1/2 h-2 rounded border-none shadow-lg shadow-emerald-800'/>
+          <section className='flex flex-col-reverse justify-center sm:flex-row mt-20 items-center gap-8 mb-12'>
+            <article className='sm:mx-[10%] px-[10%] py-10 bg-gradient-to-r from-white/40 via-white/90 to-white-40 backdrop-saturate-[0.60] rounded-2xl border-8 border-double border-slate-600/70 shadow-lg shadow-emerald-800'>
+              <p className='text-base sm:text-xl mt-4 px-2 sm:px-4 text-left font-serif text-slate-600 '>
+                We are thrilled to host our celebration at Stokely Creek Lodge in gorgeous Goulais River, Ontario. Weather permitting, we will be hosting 
+                the ceremony outside and will continue to enjoy the beautiful outdoors throughout the night. The reception will be held indoors in the main lodge dining room. Come prepared 
+                for some sikh custom beats by our chartered DJ, <span className="relative font-bold font-count text-xl text-shadow-glow2 shadow-fuchsia-700 md:text-2xl text-pink-700">DJ K-Hole</span>. 
+                We would kindly ask that all guests use the <a href="/rsvp" className="text-base sm:text-xl font-serif underline decoration-red-900 text-sky-700">RSVP Form</a> to
+                 let us know if you can make it. <span className="relative font-bold font-serif text-xl md:text-2xl text-sky-700"> The deadline to reserve is June 1<sup>st</sup></span>
               </p>
             </article>            
           </section>
         </main>
+        <Footer />
         </div>
     )
 

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom"
 import { useMediaQuery } from 'react-responsive';
 
-export default function Navbar(props) {
+export default function Navbar() {
   
   const [showNav, setShowNav] = useState(false);
   const isMed = useMediaQuery({query : '(max-width: 768px)'});
