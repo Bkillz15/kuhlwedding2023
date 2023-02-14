@@ -78,7 +78,7 @@ export default function Navbar() {
             to="/" 
             className={"pt-3 pb-2 px-3 m-0 " + 
               "uppercase text-xl md:text-xl font-semibold no-underline " + ((pathNow.pathname === "/") ? 'text-slate-600/60' : 'text-slate-600' ) + " hover:text-slate-600/60 " + 
-              "hover:shadow-sm hover:shadow-yellow-200 transition duration-300 ease-in-out " + 
+              "hover:shadow-md hover:shadow-emerald-800 transition duration-300 ease-in-out " + 
               "bg-gradient-to-b from-slate-300/70 to-slate-30/0 "  +
               "border-l-2 border-r border-slate-600/60 rounded-b-3xl rounded-t-sm"}
             >
@@ -88,7 +88,7 @@ export default function Navbar() {
             to="/travel" 
             className={"pt-3 pb-2 px-3 m-0 " + 
               "uppercase text-xl md:text-xl font-semibold no-underline " + ((pathNow.pathname === "/travel") ? 'text-slate-600/60' : 'text-slate-600' ) + " hover:text-slate-600/60 " + 
-              "hover:shadow-sm hover:shadow-yellow-200 transition duration-300 ease-in-out " + 
+              "hover:shadow-md hover:shadow-emerald-800 transition duration-300 ease-in-out " + 
               "bg-gradient-to-b from-slate-300/70 to-slate-30/0 "  +
               "border-l-2 border-r border-slate-600/60 rounded-b-3xl rounded-t-sm mx-2"}
             >
@@ -98,7 +98,7 @@ export default function Navbar() {
             to="/gallery" 
             className={"pt-3 pb-2 px-3 m-0 " + 
               "uppercase text-xl md:text-xl font-semibold no-underline " + ((pathNow.pathname === "/gallery") ? 'text-slate-600/60' : 'text-slate-600' ) + " hover:text-slate-600/60 " + 
-              "hover:shadow-sm hover:shadow-yellow-200 transition duration-300 ease-in-out " + 
+              "hover:shadow-md hover:shadow-emerald-800 transition duration-300 ease-in-out " + 
               "bg-gradient-to-b from-slate-300/70 to-slate-30/0 "  +
               "border-l-2 border-r border-slate-600/60 rounded-b-3xl rounded-t-sm mr-2"}
             >
@@ -108,7 +108,7 @@ export default function Navbar() {
             to="/rsvp" 
             className={"pt-3 pb-2 px-3 m-0 " + 
               "uppercase text-xl md:text-xl font-semibold no-underline " + ((pathNow.pathname === "/rsvp") ? 'text-slate-600/60' : 'text-slate-600' ) + " hover:text-slate-600/60 " + 
-              "hover:shadow-sm hover:shadow-yellow-200 transition duration-300 ease-in-out " + 
+              "hover:shadow-md hover:shadow-emerald-800 transition duration-300 ease-in-out " + 
               "bg-gradient-to-b from-slate-300/70 to-slate-30/0 "  +
               "border-l-2 border-r border-slate-600/60 rounded-b-3xl rounded-t-sm"}
             >

@@ -15,40 +15,40 @@ export default function Gallery(props) {
 
     const imagepaths = {  
         img1: {
-            title: "Find me on Twitter",
+            title: "Engagement Night",
             imageUrl: "gbfrontend/static/images/GAL_ENGAGE.jpg"
         },
         img2: {
-            title: "Welcome to Ark Labs",
-            imageUrl: "gbfrontend/static/images/GAL_KB_SK.jpg"
+            title: "Couple On the Rocks",
+            imageUrl: "gbfrontend/static/images/GAL_KB_ROCK.jpg"
         },
         img3: {
-            title: "Some sort of third title",
-            imageUrl: "gbfrontend/static/images/GAL_K_ROCK.jpg"
+            title: "Couple in the backyard",
+            imageUrl: "gbfrontend/static/images/GAL_BACKYARD.jpg"
         },
         img4: {
-            title: "A personal site perhaps?",
-            imageUrl: "gbfrontend/static/images/GAL_B_ROCK.jpg"
+            title: "Couple in Mexico",
+            imageUrl: "gbfrontend/static/images/GAL_KB_MEX.jpg"
         },
         img5: {
-            title: "Super item number five",
-            imageUrl: "gbfrontend/static/images/GAL_CHILI.jpg"
+            title: "Couple see the Leafs",
+            imageUrl: "gbfrontend/static/images/GAL_KB_LEAFS.jpg"
         },
         img6: {
-                title: "Super item number six",
-                imageUrl: "gbfrontend/static/images/GAL_DJ.jpg"
+                title: "Couple at the 2's wedding",
+                imageUrl: "gbfrontend/static/images/GAL_KB_SK.jpg"
         },
         img7: {
-            title: "Super item number seven",
-            imageUrl: "gbfrontend/static/images/GAL_KA.jpg"
+            title: "Couple in the Shaggin Wagon",
+            imageUrl: "gbfrontend/static/images/GAL_VAN.jpg"
         },
         img8: {
-            title: "Super item number eight",
-            imageUrl: "gbfrontend/static/images/GAL_KB_CC.jpg"
+            title: "Couple Gets Whit!",
+            imageUrl: "gbfrontend/static/images/GAL_WHIT.jpg"
         },
         img9: {
-            title: "Super item number the last",
-            imageUrl: "gbfrontend/static/images/GAL_KB_CLIFF.jpg"
+            title: "Couple but Bkillz is tuff",
+            imageUrl: "gbfrontend/static/images/GAL_TUFF.jpg"
         },
         img10: {
             title: "Super item number the last",
@@ -180,13 +180,13 @@ export default function Gallery(props) {
                         </div>
                         <div
                             ref={carousel}
-                            className="carousel-container mx-4 flex gap-1 w-fit "
+                            className="carousel-container mx-4 flex gap-1 md:gap-3 w-fit "
                         >
                             {Object.keys(imagepaths).map((resource, index) => {
                                 return (
                                 <div
                                     key={index}
-                                    className="text-center w-[280px] h-[375px] snap-start"
+                                    className="text-center w-[400px] h-[534px] snap-start"
                                 >
                                     <img
                                         src={imagepaths[resource].imageUrl || ''}

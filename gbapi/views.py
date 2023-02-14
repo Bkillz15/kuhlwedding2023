@@ -13,7 +13,6 @@ from .serializers import   (GuestDataSerializer, ReactGuestDataSerializer, NameL
 from .models import guestdata
 
 
-
 # Create your views here.
 
 class GuestView(ListAPIView):
@@ -69,7 +68,6 @@ class GetGuest(APIView):
             return Response({'Bad Request': 'Multiple Results - Database ERROR'}, status=status.HTTP_400_BAD_REQUEST)
         answers = SecretAnswerSerializer(guestInfo[0]).data['skillTestingA'].lower().split(",")
         guestAnswers = reqAnswer.lower().split(",")
-        print(guestAnswers)
         for i in range(len(guestAnswers)):
             if guestAnswers[i] in answers:
                 associatedGuests = AssociatedGuestSerializer(guestInfo[0]).data
@@ -114,14 +112,18 @@ class UpdateGuest(APIView):
         # Check that the guest being updated exists
         if not guestInfo.exists():
             return Response({'Guest Not Found': 'Guest ID is Invalid'}, status=status.HTTP_404_NOT_FOUND)
-        if (reqAnswer != SecretAnswerSerializer(guestInfo[0]).data['skillTestingA']):
-            return Response({'Bad Request': 'Invalid Credentials'}, status=status.HTTP_400_BAD_REQUEST)
         if len(guestInfo) > 1:   
             return Response({'Bad Request': 'Multiple Results - Database ERROR'}, status=status.HTTP_400_BAD_REQUEST)
+        answers = SecretAnswerSerializer(guestInfo[0]).data['skillTestingA'].lower().split(",")
+        guestAnswers = reqAnswer.lower().split(",")
+        for i in range(len(guestAnswers)):
+            if guestAnswers[i] in answers:
+                break
+            else:
+                return Response({'Bad Request': 'Invalid Credentials'}, status=status.HTTP_400_BAD_REQUEST)
         #Get all data IDs of associated guests from database and store in list
         associatedGuests = AssociatedGuestSerializer(guestInfo[0]).data
         lookupGuests = associatedGuests.get('associatedGuests').split(",")
-
         #Check that the guest is associated with the request user
         if updateID in lookupGuests:
             serializer = self.serializer_class(data = postData)

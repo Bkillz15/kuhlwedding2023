@@ -35,7 +35,7 @@ export default function Travel(props) {
                         <div className=" w-[20%] bg-gradient-to-r from-white/90 "/>
                     </article>
 
-                    <article className='col-span-full sm:mx-[10%] px-[10%] bg-gradient-to-r mt-20 py-10 from-white/70 via-white to-white/70 backdrop-saturate-[0.60] rounded-xl border-8 border-double border-slate-600/70 shadow-lg shadow-yellow-200'>
+                    <article className='col-span-full sm:mx-[10%] px-[10%] bg-gradient-to-r mt-20 py-10 from-white/70 via-white to-white/70 backdrop-saturate-[0.60] rounded-xl border-8 border-double border-slate-600/70 shadow-lg shadow-emerald-800'>
                         <p className='text-2xl mt-4 text-center sm:text-left text-slate-600 '>
                             Contact information, address
                         </p>
@@ -47,7 +47,7 @@ export default function Travel(props) {
                         </p>
                     </article>
 
-                    <div className="col-span-full w-fit mx-auto my-10 bg-yellow-50/80 rounded-xl border-8 border-double border-slate-600/70 shadow-lg shadow-yellow-200">
+                    <div className="col-span-full w-fit mx-auto my-10 bg-yellow-50/80 rounded-xl border-8 border-double border-slate-600/70 shadow-lg shadow-emerald-800">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2731.874260430879!2d-84.35011948416754!3d46.78708197913881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4d37cd7ceadea707%3A0x68480aa041efc24a!2sStokely%20Creek%20Lodge!5e0!3m2!1sen!2sca!4v1674944068711!5m2!1sen!2sca" 
                             width={isMed ? "300" : "600" }
                             height={isMed ? "240" : "450" } 

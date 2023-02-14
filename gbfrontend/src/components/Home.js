@@ -45,7 +45,7 @@ export default function Home(props) {
           <div className="row-span-2 flex flex-col h-[70px] md:h-[80px] w-[80px] md:w-[105px] border-x-2 border-amber-300 rounded-md shadow-md shadow-slate-700">
             <div className="basis-1/6 bg-gradient-to-t from-slate-700/80"/>
             <div className="basis-4/6 flex flex-col justify-center bg-slate-700/80 ">
-              <p className="text-nixie text-shadow-glow2 tracking-[0.15em] tabular-nums shadow-red-600 text-2xl md:text-4xl pl-[12px] font-count ">
+              <p className="text-nixie text-shadow-glow2 tracking-[0.15em] tabular-nums shadow-red-600 text-2xl md:text-4xl text-center font-count ">
                 {padTime(days,3)}
               </p>
             </div>
@@ -54,7 +54,7 @@ export default function Home(props) {
           <div className="row-span-2 flex flex-col h-[70px] md:h-[80px] w-[80px] md:w-[105px] border-x-2 border-amber-300 rounded-md shadow-md shadow-slate-700">
             <div className="basis-1/6 bg-gradient-to-t from-slate-700/80"/>
             <div className="basis-4/6 flex flex-col justify-center bg-slate-700/80">
-              <p className="text-nixie text-shadow-glow2 tracking-[0.15em] tabular-nums shadow-red-600 text-2xl md:text-4xl pl-[20px] md:pl-[24px] font-count ">
+              <p className="text-nixie text-shadow-glow2 tracking-[0.15em] tabular-nums shadow-red-600 text-2xl md:text-4xl text-center font-count ">
                 {padTime(hours,2)}
               </p>
             </div>
@@ -63,7 +63,7 @@ export default function Home(props) {
           <div className="row-span-2 flex flex-col h-[70px] md:h-[80px] w-[80px] md:w-[105px] border-x-2 border-amber-300 rounded-md shadow-md shadow-slate-700">
             <div className="basis-1/6 bg-gradient-to-t from-slate-700/80"/>
             <div className="basis-4/6 flex flex-col justify-center bg-slate-700/80">
-              <p className="text-nixie text-shadow-glow2 tracking-[0.15em] tabular-nums shadow-red-600 text-2xl md:text-4xl pl-[20px] md:pl-[24px] font-count ">
+              <p className="text-nixie text-shadow-glow2 tracking-[0.15em] tabular-nums shadow-red-600 text-2xl md:text-4xl text-center font-count ">
                 {padTime(minutes,2)}
               </p>
             </div>
@@ -72,7 +72,7 @@ export default function Home(props) {
           <div className="row-span-2 flex flex-col h-[70px] md:h-[80px] w-[80px] md:w-[105px] border-x-2 border-amber-300 rounded-md shadow-md shadow-slate-700">
             <div className="basis-1/6 bg-gradient-to-t from-slate-700/80"/>
             <div className="basis-4/6 flex flex-col justify-center bg-slate-700/80">
-              <p className="text-nixie text-shadow-glow2 tracking-[0.15em] tabular-nums shadow-red-600 text-2xl md:text-4xl pl-[20px] md:pl-[24px] font-count ">
+              <p className="text-nixie text-shadow-glow2 tracking-[0.15em] tabular-nums shadow-red-600 text-2xl md:text-4xl pl-[21px] md:pl-[25px] font-count ">
                 {padTime(seconds,2)}
               </p>
             </div>
