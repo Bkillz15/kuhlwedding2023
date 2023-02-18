@@ -198,7 +198,7 @@ export default function Guestform({props , updateGuest}) {
         <div>
             <hr className='mx-auto my-5 bg-slate-600/90 w-5/6 h-1.5 rounded border-none shadow-lg shadow-emerald-800'/>
             <h3 className="text-center text-base sm:text-xl font-serif text-slate-600 my-4">
-                Regretfully we are unable to attend 
+                Regretfully I am unable to attend 
             </h3>
             <hr className='mx-auto my-5 bg-slate-600/90 w-5/6 h-1.5 rounded border-none shadow-lg shadow-emerald-800'/>
         </div>
