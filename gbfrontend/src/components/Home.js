@@ -89,7 +89,7 @@ export default function Home(props) {
         <Navbar />
         <main className="mx-auto max-w-[1080px]">
           <section className='sm:flex-row p-0 mt-6 sm:mt-16 items-center mb-12'>
-            <article className='flex flex-row sm:mx-[10%] p-0 backdrop-saturate-[0.60] border-t-8 border-b-8 border-double border-slate-600/70 rounded-xl shadow-lg shadow-emerald-800'>
+            <article className='flex flex-row mx-2 sm:mx-[10%] p-0 backdrop-saturate-[0.60] border-t-8 border-b-8 border-double border-slate-600/70 rounded-xl shadow-lg shadow-emerald-800'>
               <div className=" w-[20%] bg-gradient-to-l from-white/90 " />
               <div className=" w-[60%] bg-white/90">
               <h2 className='py-10 text-4xl font-bold text-center sm:text-6xl sm:text-center font-hw text-slate-600'>
@@ -99,7 +99,7 @@ export default function Home(props) {
               <div className=" w-[20%] bg-gradient-to-r from-white/90 "/>
             </article>
 
-            <div className="mt-20 p-3 sm:mx-[10%] bg-white/90 rounded-2xl border-8 border-double border-slate-600/70 shadow-lg shadow-emerald-800">
+            <div className="mt-20 p-3 mx-2 sm:mx-[10%] bg-white/90 rounded-2xl border-8 border-double border-slate-600/70 shadow-lg shadow-emerald-800">
               <img
                 src="gbfrontend/static/images/kb_closelier.jpg"
                 alt="Kylie and Branodn hanging in the park"
@@ -113,7 +113,7 @@ export default function Home(props) {
                 renderer = {countdownRenderer}
               />
             </article>
-            <article className='sm:mx-[10%] px-[10%] bg-gradient-to-r mt-20 py-10 from-white/40 via-white/90 to-white-40 backdrop-saturate-[0.60] rounded-2xl border-8 border-double border-slate-600/70 shadow-lg shadow-emerald-800'>
+            <article className='mx-2 sm:mx-[10%] px-[10%] bg-gradient-to-r mt-20 py-10 from-white/40 via-white/90 to-white-40 backdrop-saturate-[0.60] rounded-2xl border-8 border-double border-slate-600/70 shadow-lg shadow-emerald-800'>
               <h4 className='text-3xl font-bold m-0 text-left font-serif text-slate-600'>
                 A magical night in Goulais River
               </h4>
@@ -136,12 +136,12 @@ export default function Home(props) {
           </section>
            <hr className='mx-auto mt-20 bg-slate-600 bg w-1/2 h-2 rounded border-none shadow-lg shadow-emerald-800'/>
           <section className='flex flex-col-reverse justify-center sm:flex-row mt-20 items-center gap-8 mb-12'>
-            <article className='sm:mx-[10%] px-[10%] py-10 bg-gradient-to-r from-white/40 via-white/90 to-white-40 backdrop-saturate-[0.60] rounded-2xl border-8 border-double border-slate-600/70 shadow-lg shadow-emerald-800'>
+            <article className='mx-2 sm:mx-[10%] px-[10%] py-10 bg-gradient-to-r from-white/40 via-white/90 to-white-40 backdrop-saturate-[0.60] rounded-2xl border-8 border-double border-slate-600/70 shadow-lg shadow-emerald-800'>
               <p className='text-base sm:text-xl mt-4 px-2 sm:px-4 text-left font-serif text-slate-600 '>
                 We are thrilled to host our celebration at Stokely Creek Lodge in gorgeous Goulais River, Ontario. Weather permitting, we will be hosting 
                 the ceremony outside and will continue to enjoy the beautiful outdoors throughout the night. The reception will be held indoors in the main lodge dining room. Come prepared 
                 for some sikh custom beats by our chartered DJ, <span className="relative font-bold font-count text-xl text-shadow-glow2 shadow-fuchsia-700 md:text-2xl text-pink-700">DJ K-Hole</span>. 
-                We would kindly ask that all guests use the <a href="/rsvp" className="text-base sm:text-xl font-serif underline decoration-red-900 text-sky-700">RSVP Form</a> to
+                We would kindly ask that all guests use the <a href="/rsvp" className="text-xl sm:text-xl font-serif font-bold underline decoration-red-900 text-sky-700">RSVP Form</a> to
                  let us know if you can make it. <span className="relative font-bold font-serif text-xl md:text-2xl text-sky-700"> The deadline to reserve is June 1<sup>st</sup></span>
               </p>
             </article>            

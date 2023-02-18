@@ -228,7 +228,7 @@ export default function RSVP() {
 
     const guestRequest = (
         <>
-        <article className='flex flex-row justify-items-stretch w-[90%] md:w-[80%] p-0 mt-20 backdrop-saturate-[0.60] border-t-8 border-b-8 border-double border-slate-600/70 rounded-xl shadow-lg shadow-yellow-200'>
+        <article className='mt-16 flex flex-row mx-2 sm:mx-[10%] p-0 backdrop-saturate-[0.60] border-t-8 border-b-8 border-double border-slate-600/70 rounded-xl shadow-lg shadow-emerald-800'>
             <div className="grow-0 w-[20%] bg-gradient-to-l from-white/80 " />
             <div className="grow min-w-[60%] bg-white/80">
                 <h2 className='py-10 text-5xl grow font-bold text-center md:text-6xl md:text-center font-hw text-slate-600'>
@@ -237,7 +237,7 @@ export default function RSVP() {
             </div>
             <div className="grow-0 w-[20%] bg-gradient-to-r from-white/80 "/>
         </article>
-        <div className="flex flex-col w-[90%] md:w-[80%] mt-20 py-3 px-4 md:px-10 bg-white/80 rounded-2xl border-8 border-double border-slate-600/70 shadow-lg shadow-yellow-200">
+        <article className="my-20 mx-2 sm:mx-[10%] px-[7%] py-10 bg-gradient-to-r from-white/40 via-white/90 to-white-40 backdrop-saturate-[0.60] rounded-2xl border-8 border-double border-slate-600/70 shadow-lg shadow-emerald-800">
             <p className="my-5 p-4 text-slate-600 text-base md:text-xl">
                 Welcome to the RSVP section. You may start your RSVP by clicking below. You will be asked to search your name and verify your identity with a special question.
                 Once verified, you can edit your selections and submit your form to us. You will be able to come back any time to edit your choices up until the 
@@ -252,7 +252,7 @@ export default function RSVP() {
             >
                 Start RSVP
             </button>
-        </div>      
+        </article>      
         </>      
     )
 
@@ -269,7 +269,7 @@ export default function RSVP() {
     return(
         <div className="bg-sky-200 bg-tree-light bg-fixed bg-contain bg-no-repeat bg-center">
             <Navbar />
-            <main className='flex flex-col justify-items-center items-center mx-auto px-3 sm:px-4 max-w-[1080px] min-h-screen'>
+            <main className='mx-auto max-w-[1080px] min-h-screen'>
 
                 { showGuestRequest ? guestRequest : null }  
 
@@ -282,7 +282,7 @@ export default function RSVP() {
                     {/* MODAL */}
                     <div className="relative w-auto my-6 mx-auto max-w-[300px] sm:max-w-lg">
                     {/*content*/}
-                    <div className="relative flex flex-col w-full h-[435px] outline-none focus:outline-none border-t-8 border-b-8 border-double bg-white/90 border-slate-600/70 rounded-2xl shadow-lg shadow-yellow-100">
+                    <div className="relative flex flex-col w-full h-fit outline-none focus:outline-none border-t-8 border-b-8 border-double bg-white/90 border-slate-600/70 rounded-2xl shadow-lg shadow-emerald-800">
                         {/*header*/}
                         <div className="flex items-start justify-between px-8 py-4 border-b-2 border-solid border-slate-600/70 rounded-t">
                         <h3 className="text-2xl pl-3 font-semibold text-slate-600">
@@ -328,7 +328,7 @@ export default function RSVP() {
                                 Search
                             </button>
                         </form>
-                        <form id="ansEntry" className={"w-full mt-4 " + (modalControl.verified ? null : 'hidden')} onSubmit={(e) => handleAns(e)}>
+                        <form id="ansEntry" className={"w-full my-4 " + (modalControl.verified ? null : 'hidden')} onSubmit={(e) => handleAns(e)}>
                             <div className="">
                                 <div className="">
                                     <p className='min-h-[30px] m-0 px-3'>{modalControl.promptText}</p>

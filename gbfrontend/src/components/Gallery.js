@@ -14,61 +14,80 @@ export default function Gallery(props) {
     const carousel = useRef(null);
 
     const imagepaths = {  
+        img0: {
+            title: "Engagement in the Park",
+            imageUrl: "gbfrontend/static/images/GAL_KB_PARK.jpg",
+            landscape: false,
+        },
         img1: {
-            title: "Engagement Night",
-            imageUrl: "gbfrontend/static/images/GAL_ENGAGE.jpg"
+            title: "Couple in the backyard",
+            imageUrl: "gbfrontend/static/images/GAL_BACKYARD.jpg",
+            landscape: false,
         },
         img2: {
-            title: "Couple On the Rocks",
-            imageUrl: "gbfrontend/static/images/GAL_KB_ROCK.jpg"
+            title: "Couple in Mexico",
+            imageUrl: "gbfrontend/static/images/GAL_KB_MEX.jpg",
+            landscape: false,
         },
         img3: {
-            title: "Couple in the backyard",
-            imageUrl: "gbfrontend/static/images/GAL_BACKYARD.jpg"
+            title: "Engagement Night",
+            imageUrl: "gbfrontend/static/images/GAL_ENGAGE.jpg",
+            landscape: false,
         },
         img4: {
-            title: "Couple in Mexico",
-            imageUrl: "gbfrontend/static/images/GAL_KB_MEX.jpg"
+            title: "Couple On the Rocks",
+            imageUrl: "gbfrontend/static/images/GAL_KB_ROCK.jpg",
+            landscape: false,
         },
         img5: {
             title: "Couple see the Leafs",
-            imageUrl: "gbfrontend/static/images/GAL_KB_LEAFS.jpg"
+            imageUrl: "gbfrontend/static/images/GAL_KB_LEAFS.jpg",
+            landscape: false,
         },
         img6: {
-                title: "Couple at the 2's wedding",
-                imageUrl: "gbfrontend/static/images/GAL_KB_SK.jpg"
+            title: "Kylie on the beach",
+            imageUrl: "gbfrontend/static/images/GAL_KBEACH.jpg",
+            landscape: true,
         },
         img7: {
             title: "Couple in the Shaggin Wagon",
-            imageUrl: "gbfrontend/static/images/GAL_VAN.jpg"
+            imageUrl: "gbfrontend/static/images/GAL_VAN.jpg",
+            landscape: false,
         },
         img8: {
-            title: "Couple Gets Whit!",
-            imageUrl: "gbfrontend/static/images/GAL_WHIT.jpg"
+            title: "BKillz on the Rock",
+            imageUrl: "gbfrontend/static/images/GAL_B_ROCK.jpg",
+            landscape: false,
         },
         img9: {
             title: "Couple but Bkillz is tuff",
-            imageUrl: "gbfrontend/static/images/GAL_TUFF.jpg"
+            imageUrl: "gbfrontend/static/images/GAL_TUFF.jpg",
+            landscape: false,
         },
         img10: {
-            title: "Super item number the last",
-            imageUrl: "gbfrontend/static/images/GAL_KB_MEX.jpg"
+            title: "Couple Gets Whit!",
+            imageUrl: "gbfrontend/static/images/GAL_WHIT.jpg",
+            landscape: false,
         },
         img11: {
-            title: "Super item number the last",
-            imageUrl: "gbfrontend/static/images/GAL_RB.jpg"
+            title: "Moon through the palms",
+            imageUrl: "gbfrontend/static/images/GAL_SUPERMOON.jpg",
+            landscape: true,
         },
         img12: {
-        title: "Super item number the last",
-        imageUrl: "gbfrontend/static/images/GAL_RM.jpg"
+            title: "Couple at the 2's wedding",
+            imageUrl: "gbfrontend/static/images/GAL_KB_SK.jpg",
+            landscape: false,
         },
         img13: {
-        title: "Super item number the last",
-        imageUrl: "gbfrontend/static/images/GAL_SUPERMOON.jpg"
+            title: "Sunset at Uhl's Sandbay",
+            imageUrl: "gbfrontend/static/images/sunset.jpg",
+            landscape: true,
         },
         img14: {
-        title: "Super item number the last",
-        imageUrl: "gbfrontend/static/images/GAL_VAN.jpg"
+            title: "King Gizz",
+            imageUrl: "gbfrontend/static/images/GAL_GIZZ.jpg",
+            landscape: true,
         },
     }
     
@@ -122,19 +141,19 @@ export default function Gallery(props) {
     return(
         <div className='bg-sky-200'>  
             <Navbar />
-            <main className="mx-auto max-w-[1080px]">
-                <article className='flex flex-row sm:mx-[10%] mt-20 p-0 backdrop-saturate-[0.60] border-t-8 border-b-8 border-double border-slate-600/70 rounded-xl shadow-lg shadow-emerald-800'>
+            <main className="mx-auto max-w-[1080px] px-2">
+                <article className='flex flex-row sm:mx-[8%] mt-20 p-0 backdrop-saturate-[0.60] border-t-8 border-b-8 border-double border-slate-600/70 rounded-xl shadow-lg shadow-emerald-800'>
                     <div className=" w-[20%] bg-gradient-to-l from-white/90 " />
                         <div className=" w-[60%] bg-white/90">
                             <h2 className='py-10 text-4xl font-bold text-center sm:text-6xl sm:text-center font-hw text-slate-600'>
-                                Friends & Family
+                                The Bride and Bridegroom
                             </h2>
                         </div>
-                    <div className=" w-[20%] bg-gradient-to-r from-white/90 "/>
+                    <div className="w-[20%] bg-gradient-to-r from-white/90 "/>
                 </article>
-                <div className="carousel my-32 mx-auto p-4 bg-white/80 rounded-2xl border-double border-8 border-slate-700">
+                <div className="carousel my-32 mx-auto p-0 bg-white/80 rounded-2xl border-double border-8 border-slate-700">
                     <div className="relative bg-slate-900 overflow-x-hidden rounded-xl hover:overflow-x-scroll scroll-smooth snap-x snap-mandatory touch-pan-x z-0">
-                        <div className="flex justify-between absolute top left w-full h-full ">
+                        {/* <div className="flex justify-between absolute top-0 left-4 w-full h-full ">
                             <button
                                 onClick={movePrev}
                                 className="hover:bg-blue-900/75 text-white w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
@@ -177,7 +196,7 @@ export default function Gallery(props) {
                                 </svg>
                                 <span className="sr-only">Next</span>
                             </button>
-                        </div>
+                        </div> */}
                         <div
                             ref={carousel}
                             className="carousel-container mx-4 flex gap-1 md:gap-3 w-fit "
@@ -186,12 +205,12 @@ export default function Gallery(props) {
                                 return (
                                 <div
                                     key={index}
-                                    className="text-center w-[400px] h-[534px] snap-start"
+                                    className={"text-center snap-start " + (imagepaths[resource].landscape ? "w-[712px] h-[534px]" : "w-[400px] h-[534px]") }
                                 >
                                     <img
                                         src={imagepaths[resource].imageUrl || ''}
                                         alt={imagepaths[resource].title}
-                                        className="aspect-[3/4]"
+                                        className={imagepaths[resource].landscape ? "aspect-[4/3]" : "aspect-[3/4]"}
                                     />
                                     {/* <h3 className="text-sm text-white py-6 px-3 mx-auto">
                                         {imagepaths[resource].title}
