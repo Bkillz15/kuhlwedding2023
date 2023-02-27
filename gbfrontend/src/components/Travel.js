@@ -38,10 +38,10 @@ export default function Travel(props) {
                     <article className='col-span-full mx-2 sm:mx-[10%] px-[10%] bg-gradient-to-r mt-20 py-10 from-white/70 via-white to-white/70 backdrop-saturate-[0.60] rounded-xl border-8 border-double border-slate-600/70 shadow-lg shadow-emerald-800'>
                         <p className='text-base sm:text-xl mt-4 text-center sm:text-left text-slate-600'>
                             Stokely has a number of rooms available if you are interested in spending the night. Please contact Stokely directly at the below info for booking. 
-                            Bookings for the accomodations will open May 1st, 2023. Private cabins are limited so expect to share a room with a few other guests.
+                            Bookings for the accomodations will open May 30<sup>th</sup>, 2023. Private cabins are limited so some accomodations will have shared bedrooms and/or shared bathrooms.
                         </p>
                         <p className='text-base sm:text-xl mt-4 text-center sm:text-left text-slate-600'>
-                            On the RSVP page, you can let us know if you are interested in taking the shuttle into town. We will be organizing rides base on this feedback
+                            On the RSVP page, you can let us know if you are interested in taking the shuttle into town. We will be organizing rides based on this feedback
                         </p>                    
                     </article>
 

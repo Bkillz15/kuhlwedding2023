@@ -49,46 +49,46 @@ export default function Guestform({props , updateGuest}) {
                 </div>
                 <div className={"flex flex-col mx-2 sm:mx-0 sm:ml-4 border-2 border-slate-600/70 rounded-2xl " + (mainCourse === "Pork" ? "drop-shadow-lg" : "opacity-70")}>
                     <p className="p-2 mx-3 grow text-slate-600 text-base">
-                        The pork is a fine roast with many herbs and spices. Served with cherry potatoes and a russet salad
+                        OpTiOn 1 DeScRiPtIoN pEnDiNg StOkElY dEtAiLs
                     </p>
                     <button className={"py-1 mx-auto my-2 w-[60%] border-2 text-lg font-serif rounded-xl ease-linear transition-all duration-150 sm:hover:scale-105 active:bg-sky-600 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 border-slate-600/70 " +
                         (mainCourse === "Pork" ? "bg-sky-300 text-slate-600" : "bg-sky-200 text-slate-400")}
                         onClick={() => setMainCourse("Pork")}
                         type="button">
-                        PORK 
+                        OPTION 1
                     </button>
                 </div>
                 <div className={"flex flex-col mx-2 sm:mx-0 sm:mr-4 border-2 border-slate-600/70 rounded-2xl " + (mainCourse === "Chicken" ? "drop-shadow-lg" : "opacity-70")}>
                     <p className="p-2 mx-3 grow text-slate-600 text-base">
-                        Stokely is proud to provide their finest boiled chicken breast with an optional side of salt ($3.00 extra)
+                        OpTiOn 2 DeScRiPtIoN pEnDiNg StOkElY dEtAiLs
                     </p>
                     <button className={"py-1 mx-auto my-2 w-[60%] border-2 text-lg font-serif rounded-xl ease-linear transition-all duration-150 sm:hover:scale-105 active:bg-sky-600 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 border-slate-600/70 " +
                         (mainCourse === "Chicken" ? "bg-sky-300 text-slate-600" : "bg-sky-200 text-slate-400")}
                         onClick={() => setMainCourse("Chicken")}
                         type="button">
-                        CHICKEN
+                        OPTION 2
                     </button>
                 </div>
                 <div className={"flex flex-col mx-2 sm:mx-0 sm:ml-4 border-2 border-slate-600/70 rounded-2xl " + (mainCourse === "Veggie" ? "drop-shadow-lg" : "opacity-70")}>
                     <p className="p-2 mx-3 grow text-slate-600 text-base">
-                        Milk soup with some eggy stuff. No gabagoooooo
+                        OpTiOn 3 DeScRiPtIoN pEnDiNg StOkElY dEtAiLs
                     </p>
                     <button className={"py-1 mx-auto my-2 w-[60%] border-2 text-lg font-serif rounded-xl ease-linear transition-all duration-150 sm:hover:scale-105 active:bg-sky-600 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 border-slate-600/70 " +
                         (mainCourse === "Veggie" ? "bg-sky-300 text-slate-600" : "bg-sky-200 text-slate-400")}
                         onClick={() => setMainCourse("Veggie")}
                         type="button">
-                        VEGETARIAN 
+                        OPTION 3 
                     </button>  
                 </div>
                 <div className={"flex flex-col mx-2 sm:mx-0 sm:mr-4 border-2 border-slate-600/70 rounded-2xl " + (mainCourse === "Vegan" ? "drop-shadow-lg" : "opacity-70")}>
                     <p className="p-2 mx-3 grow text-slate-600 text-base">
-                        Leafs
+                        OpTiOn 4 DeScRiPtIoN pEnDiNg StOkElY dEtAiLs
                     </p>
                     <button className={"py-1 mx-auto my-2 w-[60%] border-2 text-lg font-serif rounded-xl ease-linear transition-all duration-150 sm:hover:scale-105 active:bg-sky-600 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 border-slate-600/70 " +
                         (mainCourse === "Vegan" ? "bg-sky-300 text-slate-600" : "bg-sky-200 text-slate-400")}
                         onClick={() => setMainCourse("Vegan")}
                         type="button">
-                        VEGAN
+                        OPTION 4
                     </button>
                 </div>
                 <div className="col-span-full flex flex-col place-items-stretch mt-3 ">
@@ -236,7 +236,7 @@ export default function Guestform({props , updateGuest}) {
     const showDetails = (
 
         <>
-            <div className="grid grid-flow-row grid-cols-2 md:grid-cols-4 px-1 py-3 text-justify-center">
+            <div className="grid grid-flow-row grid-cols-2 md:grid-cols-4 px-1 pb-3 text-justify-center">
                 {props.coming ? (
                 <>
                     <p className="bg-white/70 shadow-sm shadow-slate-700 text-slate-600 text-right py-1 pr-3 mt-2 mb-0 ml-3 mr-1 rounded">Dinner Selection:</p>
@@ -270,7 +270,7 @@ export default function Guestform({props , updateGuest}) {
 
     return(
         <div className="my-6 mx-2 sm:mx-6 p-3 border-t-8 border-b-8 border-double border-slate-600/70 rounded-2xl bg-white/80">
-            <h3 className="w-[75%] py-1 px-3 mb-5 mx-auto text-slate-600 text-3xl sm:text-2xl text-center font-hw font-semibold drop-shadow-lg border-b-2 border-slate-600/70">
+            <h3 className="py-1 px-[15%] mb-5 mt-2 mx-auto w-fit text-slate-600 text-2xl sm:text-3xl text-center font-hw font-semibold drop-shadow-lg bg-sky-300 border-2 rounded-xl border-slate-600/70">
                 {props.guestName}
             </h3>
             

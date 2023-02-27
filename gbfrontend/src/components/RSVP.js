@@ -241,7 +241,7 @@ export default function RSVP() {
             <p className="my-5 p-4 text-slate-600 text-base md:text-xl">
                 Welcome to the RSVP section. You may start your RSVP by clicking below. You will be asked to search your name and verify your identity with a special question.
                 Once verified, you can edit your selections and submit your form to us. You will be able to come back any time to edit your choices up until the 
-                <span className="relative font-bold font-serif text-xl md:text-2xl text-sky-700"> RSVP deadline of June 1<sup>st</sup></span>
+                <span className="relative font-bold font-serif text-xl md:text-2xl text-sky-700"> RSVP deadline of June 30<sup>th</sup></span>
             </p>
             <button
                 className={"bg-sky-300 text-slate-600 active:bg-sky-600 font-serif font-semibold text-xl py-3 px-6 mb-6 rounded-xl border-2 border-slate-600/70 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 " +

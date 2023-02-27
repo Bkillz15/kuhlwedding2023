@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.db.models import Q
 from django.utils import timezone
 from django.http import JsonResponse
-#from django.http import HttpResponse
+from django.http import HttpResponse
 from rest_framework import status
 from rest_framework.generics import ListAPIView
 from rest_framework.permissions import IsAuthenticated
@@ -11,7 +11,6 @@ from rest_framework.response import Response
 from .serializers import   (GuestDataSerializer, ReactGuestDataSerializer, NameLookupSerializer, UpdateGuestSerializer,
                             SecretAnswerSerializer, GuestNameIDSerializer, AssociatedGuestSerializer)
 from .models import guestdata
-
 
 # Create your views here.
 
@@ -160,8 +159,5 @@ class UpdateGuest(APIView):
             return Response(ReactGuestDataSerializer(updateData).data, status=status.HTTP_200_OK)
         else:
             return Response({'Bad Request': 'Guest Update Not Associated with Validated Guest'}, status=status.HTTP_400_BAD_REQUEST)
-        
-        
-        
-            
+          
         

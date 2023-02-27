@@ -132,6 +132,9 @@ export default function Home(props) {
               <h4 className="text-xl mt-2 text-left font-serif text-slate-600">
                194 Pickard Rd,<br/>Goulais River,ON<br/>P0S 1E0
               </h4>
+              <h4 className="text-xl mt-2 font-bold text-left font-serif text-slate-600">
+                Dress Code: Cocktail Attire
+              </h4>
             </article>
           </section>
            <hr className='mx-auto mt-20 bg-slate-600 bg w-1/2 h-2 rounded border-none shadow-lg shadow-emerald-800'/>
@@ -139,10 +142,9 @@ export default function Home(props) {
             <article className='mx-2 sm:mx-[10%] px-[10%] py-10 bg-gradient-to-r from-white/40 via-white/90 to-white-40 backdrop-saturate-[0.60] rounded-2xl border-8 border-double border-slate-600/70 shadow-lg shadow-emerald-800'>
               <p className='text-base sm:text-xl mt-4 px-2 sm:px-4 text-left font-serif text-slate-600 '>
                 We are thrilled to host our celebration at Stokely Creek Lodge in gorgeous Goulais River, Ontario. Weather permitting, we will be hosting 
-                the ceremony outside and will continue to enjoy the beautiful outdoors throughout the night. The reception will be held indoors in the main lodge dining room. Come prepared 
-                for some sikh custom beats by our chartered DJ, <span className="relative font-bold font-count text-xl text-shadow-glow2 shadow-fuchsia-700 md:text-2xl text-pink-700">DJ K-Hole</span>. 
+                the ceremony outside and will continue to enjoy the beautiful outdoors throughout the night. The reception will be held indoors in the main lodge dining room.
                 We would kindly ask that all guests use the <a href="/rsvp" className="text-xl sm:text-xl font-serif font-bold underline decoration-red-900 text-sky-700">RSVP Form</a> to
-                 let us know if you can make it. <span className="relative font-bold font-serif text-xl md:text-2xl text-sky-700"> The deadline to reserve is June 1<sup>st</sup></span>
+                 let us know if you can make it. <span className="relative font-bold font-serif text-xl md:text-2xl text-sky-700"> The deadline to reserve is June 30<sup>th</sup></span>
               </p>
             </article>            
           </section>
@@ -152,3 +154,4 @@ export default function Home(props) {
     )
 
 }
+// Come prepared for some sikh custom beats by our chartered DJ, <span className="relative font-bold font-count text-xl text-shadow-glow2 shadow-fuchsia-700 md:text-2xl text-pink-700">DJ K-Hole</span>. 
