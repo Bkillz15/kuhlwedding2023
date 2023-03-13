@@ -8,7 +8,7 @@ export default function Footer(props) {
                 <div className="flex flex-row justify-center content-center max-w-[1080px] mx-auto mt-7 px-0 pt-0 pb-0">
                     <div>
                         <h3 className="mx-auto text-center text-2xl sm:text-3xl text-slate-300 font-serif text-shadow-glow2 shadow-amber-500">
-                            Copyright BkillzCorp 2023
+                            Copyright UhlCorp 2023
                         </h3>
                     </div>
                 </div>
