@@ -141,10 +141,10 @@ export default function Home(props) {
           <section className='flex flex-col-reverse justify-center sm:flex-row mt-20 items-center gap-8 mb-12'>
             <article className='mx-2 sm:mx-[10%] px-[10%] py-10 bg-gradient-to-r from-white/40 via-white/90 to-white-40 backdrop-saturate-[0.60] rounded-2xl border-8 border-double border-slate-600/70 shadow-lg shadow-emerald-800'>
               <p className='text-base sm:text-xl mt-4 px-2 sm:px-4 text-left font-serif text-slate-600 '>
-                We are thrilled to host our celebration at Stokely Creek Lodge in gorgeous Goulais River, Ontario. Weather permitting, we will be hosting 
+                We are thrilled to host our celebration at Stokely Creek Lodge in gorgeous Goulais River, Ontario, located 30 minutes north of Sault Ste. Marie. Weather permitting, we will be hosting 
                 the ceremony outside and will continue to enjoy the beautiful outdoors throughout the night. The reception will be held indoors in the main lodge dining room.
                 We would kindly ask that all guests use the <a href="/rsvp" className="text-xl sm:text-xl font-serif font-bold underline decoration-red-900 text-sky-700">RSVP Form</a> to
-                 let us know if you can make it. <span className="relative font-bold font-serif text-xl md:text-2xl text-sky-700"> The deadline to reserve is June 30<sup>th</sup></span>
+                 let us know if you can make it. <span className="relative font-bold font-serif text-xl md:text-2xl text-sky-700"> The deadline to RSVP is June 30<sup>th</sup></span>
               </p>
             </article>            
           </section>

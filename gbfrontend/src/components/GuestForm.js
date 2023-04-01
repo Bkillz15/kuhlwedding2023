@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 
 export default function Guestform({props , updateGuest}) {
     
-    const [edit, setEdit] = useState(props.rsvpSubmitted)
+    const [edit, setEdit] = useState(props.rsvpSubmitted);
+    const [firstEntry, setFirstEntry] = useState(!props.rsvpSubmitted);
     const [coming, setComing] = useState(props.coming);
     const [dietRes, setDietRes] = useState(props.dietaryRes)
     const [mainCourse, setMainCourse] = useState(props.dinnerChoice);
@@ -35,6 +36,11 @@ export default function Guestform({props , updateGuest}) {
         // setEdit(false)
     }
 
+    function handleNotComing() {
+        setComing(false);
+        setFirstEntry(false);
+    }
+
     const showOptions = (
 
             <div className="z-10 grid gap-3 grid-flow-row grid-cols-1 sm:grid-cols-2 my-3 sm:mx-3">
@@ -44,43 +50,43 @@ export default function Guestform({props , updateGuest}) {
                         Dinner Options
                     </h4>
                     <h5 className="w-[85%] mx-auto mb-2 mt-4 text-left text-base text-slate-600 ">
-                        Please select one of the below options
+                        Please select one of the below options. Vegan options are available upon request. Just let us know in the dietary restrictions.
                     </h5>
                 </div>
-                <div className={"flex flex-col mx-2 sm:mx-0 sm:ml-4 border-2 border-slate-600/70 rounded-2xl " + (mainCourse === "Pork" ? "drop-shadow-lg" : "opacity-70")}>
+                <div className={"flex flex-col mx-2 sm:mx-0 sm:ml-4 border-2 border-slate-600/70 rounded-2xl " + (mainCourse === "Beef" ? "drop-shadow-lg" : "opacity-70")}>
                     <p className="p-2 mx-3 grow text-slate-600 text-base">
-                        OpTiOn 1 DeScRiPtIoN pEnDiNg StOkElY dEtAiLs
+                        6oz beef filet with red wine demi glaze and house made boursin cheese. Side of herbed mashed potatoes and mixed vegetables.
                     </p>
                     <button className={"py-1 mx-auto my-2 w-[60%] border-2 text-lg font-serif rounded-xl ease-linear transition-all duration-150 sm:hover:scale-105 active:bg-sky-600 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 border-slate-600/70 " +
-                        (mainCourse === "Pork" ? "bg-sky-300 text-slate-600" : "bg-sky-200 text-slate-400")}
-                        onClick={() => setMainCourse("Pork")}
+                        (mainCourse === "Beef" ? "bg-sky-300 text-slate-600" : "bg-sky-200 text-slate-400")}
+                        onClick={() => setMainCourse("Beef")}
                         type="button">
-                        OPTION 1
+                        Beef Filet
                     </button>
                 </div>
                 <div className={"flex flex-col mx-2 sm:mx-0 sm:mr-4 border-2 border-slate-600/70 rounded-2xl " + (mainCourse === "Chicken" ? "drop-shadow-lg" : "opacity-70")}>
                     <p className="p-2 mx-3 grow text-slate-600 text-base">
-                        OpTiOn 2 DeScRiPtIoN pEnDiNg StOkElY dEtAiLs
+                        Stuffed 7oz chicken breast with apricots, dates and cranberry. Stuffed with cinnamon cream sauce and served with wild rice pilaf and mixed vegetables.
                     </p>
                     <button className={"py-1 mx-auto my-2 w-[60%] border-2 text-lg font-serif rounded-xl ease-linear transition-all duration-150 sm:hover:scale-105 active:bg-sky-600 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 border-slate-600/70 " +
                         (mainCourse === "Chicken" ? "bg-sky-300 text-slate-600" : "bg-sky-200 text-slate-400")}
                         onClick={() => setMainCourse("Chicken")}
                         type="button">
-                        OPTION 2
+                        Chicken Supreme
                     </button>
                 </div>
                 <div className={"flex flex-col mx-2 sm:mx-0 sm:ml-4 border-2 border-slate-600/70 rounded-2xl " + (mainCourse === "Veggie" ? "drop-shadow-lg" : "opacity-70")}>
                     <p className="p-2 mx-3 grow text-slate-600 text-base">
-                        OpTiOn 3 DeScRiPtIoN pEnDiNg StOkElY dEtAiLs
+                        Vegetarian option. Italian arborio rice with wild mushrooms in a creamy sauce. Served with mixed vegetables. This can be made vegan upon request.
                     </p>
                     <button className={"py-1 mx-auto my-2 w-[60%] border-2 text-lg font-serif rounded-xl ease-linear transition-all duration-150 sm:hover:scale-105 active:bg-sky-600 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 border-slate-600/70 " +
                         (mainCourse === "Veggie" ? "bg-sky-300 text-slate-600" : "bg-sky-200 text-slate-400")}
                         onClick={() => setMainCourse("Veggie")}
                         type="button">
-                        OPTION 3 
+                        Mushroom Risotto  
                     </button>  
                 </div>
-                <div className={"flex flex-col mx-2 sm:mx-0 sm:mr-4 border-2 border-slate-600/70 rounded-2xl " + (mainCourse === "Vegan" ? "drop-shadow-lg" : "opacity-70")}>
+                {/* <div className={"flex flex-col mx-2 sm:mx-0 sm:mr-4 border-2 border-slate-600/70 rounded-2xl " + (mainCourse === "Vegan" ? "drop-shadow-lg" : "opacity-70")}>
                     <p className="p-2 mx-3 grow text-slate-600 text-base">
                         OpTiOn 4 DeScRiPtIoN pEnDiNg StOkElY dEtAiLs
                     </p>
@@ -90,7 +96,7 @@ export default function Guestform({props , updateGuest}) {
                         type="button">
                         OPTION 4
                     </button>
-                </div>
+                </div> */}
                 <div className="col-span-full flex flex-col place-items-stretch mt-3 ">
                     <label htmlFor="alergies" className="mt-2 mb-1 mx-[6%] text-sm sm:text-base font-medium text-slate-600">Any neccessary dietary restrictions? Let us know!</label>
                     <input 
@@ -106,12 +112,13 @@ export default function Guestform({props , updateGuest}) {
                 {/* Staying the night and bus?? */}
                 <div className="col-span-full" >
                     <h4 className="w-[85%] mx-auto pb-1 mb-2 text-center text-xl text-slate-600 font-serif font-semibold drop-shadow-lg border-b-4 border-double border-slate-600/70 ">
-                        Accomodations and Transportation Survey
+                        Accommodations and Transportation Survey
                     </h4>
                 </div>
                 <div className="flex flex-col mx-2 sm:mx-0 sm:mr-4 drop-shadow-lg border-2 border-slate-600/70 rounded-2xl" >
-                    < p className="p-2 mx-3 grow text-slate-600 text-base">
-                        Are you interested in spending the night at Stokely? There are a number of beds available. Details will be available closer to the date.
+                    <p className="p-2 mx-3 grow text-slate-600 text-base">
+                        Are you interested in spending the night? Stokely has a number of accommodations available. 
+                        See the <a href="/travel" className="text-xl sm:text-xl font-serif font-bold underline decoration-red-900 text-sky-700" target="_blank">travel</a>  page for booking and details.
                     </p>
                     <div className="flex flex-row flex-wrap mb-3 place-items-stretch">
                         <button className=  {"py-1 mx-3 my-1 border-2 grow min-w-[80px] text-lg font-serif rounded-xl ease-linear transition-all duration-150 sm:hover:scale-105 active:bg-sky-600 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 border-slate-600/70 " +
@@ -131,7 +138,8 @@ export default function Guestform({props , updateGuest}) {
                 </div>
                 <div className="flex flex-col mx-2 sm:mx-0 sm:mr-4 drop-shadow-lg border-2 border-slate-600/70 rounded-2xl" >
                     <p className="p-2 mx-3 grow text-slate-600 text-base">
-                        We are looking to book transportation back to town. Would you be interested in a ride? We will set a couple drop off locations around town depending who is on the bus.
+                        We are plannig to provide transportation back to town. Would you be interested in a ride? We will be organizing transportation based on interest. 
+                        We will update the <a href="/travel" className="text-xl sm:text-xl font-serif font-bold underline decoration-red-900 text-sky-700" target="_blank">travel</a> page closer to the date. 
                     </p>
                     <div className="flex flex-row flex-wrap mb-3 place-items-stretch">
                         <button className=  {"py-1 mx-3 my-1 border-2 grow min-w-[80px] text-lg font-serif rounded-xl ease-linear transition-all duration-150 sm:hover:scale-105 active:bg-sky-600 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 border-slate-600/70 " +
@@ -195,10 +203,11 @@ export default function Guestform({props , updateGuest}) {
         // onSubmit={() => handleGuestSubmit()}
 
     const showNotComing = (
+        
         <div>
             <hr className='mx-auto my-5 bg-slate-600/90 w-5/6 h-1.5 rounded border-none shadow-lg shadow-emerald-800'/>
             <h3 className="text-center text-base sm:text-xl font-serif text-slate-600 my-4">
-                Regretfully I am unable to attend 
+                { firstEntry ? "Welcome to the RSVP form!" : "Regretfully I am unable to attend" }
             </h3>
             <hr className='mx-auto my-5 bg-slate-600/90 w-5/6 h-1.5 rounded border-none shadow-lg shadow-emerald-800'/>
         </div>
@@ -214,8 +223,8 @@ export default function Guestform({props , updateGuest}) {
                     type="button">
                     Humbly, yes
                 </button>
-                <button className={"py-1 sm:ml-2 font-serif font-semibold ease-linear transition-all duration-150 shadow shadow-slate-600 sm:hover:scale-105 active:bg-sky-600 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 rounded-xl border-2 " + (!coming ? "bg-sky-300 text-slate-600  border-slate-600/70 " : "bg-sky-200 text-slate-400  border-slate-600/70")}
-                    onClick={() => setComing(false)}
+                <button className={"py-1 sm:ml-2 font-serif font-semibold ease-linear transition-all duration-150 shadow shadow-slate-600 sm:hover:scale-105 active:bg-sky-600 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 rounded-xl border-2 " + ((!coming && !firstEntry) ? "bg-sky-300 text-slate-600  border-slate-600/70 " : "bg-sky-200 text-slate-400  border-slate-600/70")}
+                    onClick={() => handleNotComing()}
                     type="button">
                     Regretfully, no 
                 </button>

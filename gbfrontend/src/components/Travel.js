@@ -35,20 +35,87 @@ export default function Travel(props) {
                         <div className=" w-[20%] bg-gradient-to-r from-white/90 "/>
                     </article>
 
-                    <article className='col-span-full mx-2 sm:mx-[10%] px-[10%] bg-gradient-to-r mt-20 py-10 from-white/70 via-white to-white/70 backdrop-saturate-[0.60] rounded-xl border-8 border-double border-slate-600/70 shadow-lg shadow-emerald-800'>
-                        <p className='text-base sm:text-xl mt-4 text-center sm:text-left text-slate-600'>
-                            Stokely has a number of rooms available if you are interested in spending the night. Please contact Stokely directly at the below info for booking. 
-                            Bookings for the accomodations will open May 30<sup>th</sup>, 2023. Private cabins are limited so some accomodations will have shared bedrooms and/or shared bathrooms.
+                    <article className='mx-2 sm:mx-[10%] px-[10%] bg-gradient-to-r mt-20 py-10 from-white/70 via-white to-white/70 backdrop-saturate-[0.60] rounded-xl border-8 border-double border-slate-600/70 shadow-lg shadow-emerald-800'>
+                        <p className='text-base sm:text-xl mt-6 text-left text-slate-600'>
+                            Stokely has a number of rooms available if you are interested in spending the night. To book a room, please contact Stokely directly at the below contact information. 
+                            Bookings for the accomodations will open May 1<sup>st</sup>, 2023 and can be booked for the days before and after the wedding as needed. All rooms will be reserved for wedding guests until 
+                            two months prior to the wedding or June 11<sup>th</sup>. After that date, rooms will also be open to the general public for booking.
                         </p>
-                        <p className='text-base sm:text-xl mt-4 text-center sm:text-left text-slate-600'>
-                            On the RSVP page, you can let us know if you are interested in taking the shuttle into town. We will be organizing rides based on this feedback
+                        <div className="grid grid-flow-row grid-cols-12 gap-1 mx-auto px-1 pb-3 text-justify-center items-stretch max-w-[444px] mt-10">
+                            <p className="bg-white/70 col-span-full shadow-sm shadow-slate-700 text-slate-600 font-sarif font-bold text-xl text-center py-3 rounded">Accommodations</p>
+                            <div className="flex flex-col bg-white/70 row-span-2 col-span-6 shadow-sm shadow-slate-700 rounded">
+                                <p className=" text-slate-600 text-center m-auto font-semibold">Room Types</p>
+                            </div>
+                            <p className="bg-white/70 col-span-6 shadow-sm shadow-slate-700 text-slate-600 text-center font-semibold py-1 rounded">Rates</p>
+                            <p className="bg-white/70 col-span-3 shadow-sm shadow-slate-700 text-slate-600 text-center font-semibold py-1 rounded">Sun-Thurs</p>
+                            <p className="bg-white/70 col-span-3 shadow-sm shadow-slate-700 text-slate-600 text-center font-semibold py-1 rounded">Fri, Sat & Hol</p>
+                            <p className="bg-white/70 col-span-6 shadow-sm shadow-slate-700 text-slate-600 text-right py-1 pr-3 rounded">Lodge Room (single)</p>
+                            <p className="bg-white/70 col-span-3 shadow-sm shadow-slate-700 text-slate-600 text-center py-1 rounded">$104</p>
+                            <p className="bg-white/70 col-span-3 shadow-sm shadow-slate-700 text-slate-600 text-center py-1 rounded">$120</p>
+                            <p className="bg-white/70 col-span-6 shadow-sm shadow-slate-700 text-slate-600 text-right py-1 pr-3 rounded">Lodge Room</p>
+                            <p className="bg-white/70 col-span-3 shadow-sm shadow-slate-700 text-slate-600 text-center py-1 rounded">$120</p>
+                            <p className="bg-white/70 col-span-3 shadow-sm shadow-slate-700 text-slate-600 text-center py-1 rounded">$136</p>
+                            <p className="bg-white/70 col-span-6 shadow-sm shadow-slate-700 text-slate-600 text-right py-1 pr-3 rounded">Chalet Room</p>
+                            <p className="bg-white/70 col-span-3 shadow-sm shadow-slate-700 text-slate-600 text-center py-1 rounded">$140</p>
+                            <p className="bg-white/70 col-span-3 shadow-sm shadow-slate-700 text-slate-600 text-center py-1 rounded">$156</p>
+                            <p className="bg-white/70 col-span-6 shadow-sm shadow-slate-700 text-slate-600 text-right py-1 pr-3 rounded">Suites</p>
+                            <p className="bg-white/70 col-span-3 shadow-sm shadow-slate-700 text-slate-600 text-center py-1 rounded">$156</p>
+                            <p className="bg-white/70 col-span-3 shadow-sm shadow-slate-700 text-slate-600 text-center py-1 rounded">$172</p>
+                            <p className="bg-white/70 col-span-full shadow-sm shadow-slate-700 text-slate-600 text-left px-3 py-1 mt-2 rounded">
+                                * All rates per night based on double occupancy unless stated otherwise.
+                            </p>
+                        </div>
+                        <p className='text-base sm:text-xl mt-6 text-left text-slate-600'>
+                            Lodge rooms are located in the main lodge where the reception is held and have shared bathrooms. Chalets and suites are a short walk from the lodge and vary in size and the number of rooms.
+        .
+                        </p>
+                        <div className="grid grid-flow-row grid-cols-12 gap-1 mx-auto px-1 pb-3 text-justify-center items-stretch max-w-[444px] mt-10">
+                            <p className="bg-white/70 col-span-full shadow-sm shadow-slate-700 text-slate-600 text-left px-3 py-1 rounded">
+                                Meal plans are available at the below rates
+                            </p>
+                            <p className="bg-white/70 col-span-6 shadow-sm shadow-slate-700 text-slate-600 text-right px-3 py-1 rounded">
+                               Breakfast
+                            </p>
+                            <p className="bg-white/70 col-span-6 shadow-sm shadow-slate-700 text-slate-600 text-center px-3 py-1 rounded">
+                                $15
+                            </p>
+                            <p className="bg-white/70 col-span-6 shadow-sm shadow-slate-700 text-slate-600 text-right px-3 py-1 rounded">
+                               Lunch
+                            </p>
+                            <p className="bg-white/70 col-span-6 shadow-sm shadow-slate-700 text-slate-600 text-center px-3 py-1 rounded">
+                                $20
+                            </p>
+                            <p className="bg-white/70 col-span-6 shadow-sm shadow-slate-700 text-slate-600 text-right px-3 py-1 rounded">
+                               Dinner (Chef's choice with apps)
+                            </p>
+                            <p className="bg-white/70 col-span-6 shadow-sm shadow-slate-700 text-slate-600 text-center px-3 py-1 rounded">
+                                $45
+                            </p>
+                            <p className="bg-white/70 col-span-6 shadow-sm shadow-slate-700 text-slate-600 text-right px-3 py-1 rounded">
+                               Overnight Package (Dinner and Breakfast)
+                            </p>
+                            <p className="bg-white/70 col-span-6 shadow-sm shadow-slate-700 text-slate-600 text-center px-3 py-1 rounded">
+                                $55
+                            </p>
+                            <p className="bg-white/70 col-span-full shadow-sm shadow-slate-700 text-slate-600 text-left px-3 py-1 mt-2 rounded">
+                                * Dinner will be provided the night of the wedding
+                            </p>
+                        </div>
+                        <p className='text-base sm:text-xl mt-10 text-left text-slate-600'>
+                            On the RSVP page, you can let us know if you are interested in taking the shuttle into town. We will be organizing rides based on this feedback.
                         </p>                    
                     </article>
 
                     <article className='col-span-full mx-2 sm:mx-[10%] bg-gradient-to-r mt-20 py-10 from-white/70 via-white to-white/70 backdrop-saturate-[0.60] rounded-xl border-8 border-double border-slate-600/70 shadow-lg shadow-emerald-800'>
                         <h2 className="text-2xl px-[20%] sm:text-3xl mt-4 font-bold text-left font-serif text-slate-600">Stokely Creek Lodge</h2>
-                        <h4 className="text-xl px-[20%] sm:text-2xl mt-4 text-left font-serif text-slate-600">
-                            (705) 649-3421
+                        <a href="https://www.stokelycreek.com" className="text-xl px-[20%] sm:text-2xl mt-4 text-left font-serif text-slate-600" target="_blank">
+                            www.stokelycreek.com
+                        </a>
+                        <h4 className="text-xl px-[20%] sm:text-2xl mt-2 text-left font-serif text-slate-600">
+                            705-649-3421
+                        </h4>
+                        <h4 className="text-xl px-[20%] sm:text-2xl mt-2 text-left font-serif text-slate-600">
+                            1-866-786-5359
                         </h4>
                         <h4 className="text-xl px-[20%] sm:text-2xl mt-2 text-left font-serif text-slate-600">
                             194 Pickard Rd,<br/>Goulais River,ON<br/>P0S 1E0

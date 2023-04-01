@@ -282,7 +282,7 @@ export default function RSVP() {
                     {/* MODAL */}
                     <div className="relative w-auto my-6 mx-auto max-w-[300px] sm:max-w-lg">
                     {/*content*/}
-                    <div className="relative flex flex-col w-full h-fit outline-none focus:outline-none border-t-8 border-b-8 border-double bg-white/90 border-slate-600/70 rounded-2xl shadow-lg shadow-emerald-800">
+                    <div className="relative flex flex-col w-full h-fit outline-none focus:outline-none border-t-8 border-b-8 border-double bg-white border-slate-600/70 rounded-2xl shadow-lg shadow-emerald-800">
                         {/*header*/}
                         <div className="flex items-start justify-between px-8 py-4 border-b-2 border-solid border-slate-600/70 rounded-t">
                         <h3 className="text-2xl pl-3 font-semibold text-slate-600">
@@ -306,11 +306,13 @@ export default function RSVP() {
                                 </div>
                                 <div className="w-2/3">
                                     <input 
-                                        className="bg-sky-100 appearance-none border-2 border-sky-400/30 rounded-xl w-full py-2 px-4 my-1 text-slate-600 leading-tight focus:bg-white focus:border-emerald-400" 
+                                        className={"bg-sky-100 appearance-none border-2 border-sky-400/30 rounded-xl w-full py-2 px-4 my-1 text-slate-600 leading-tight focus:bg-white focus:border-emerald-400" + 
+                                                    " disabled:text-slate-600/30 "}
                                         id="nameText" 
                                         type="text"
                                         requred="true"
                                         placeholder="Enter Name"
+                                        disabled={modalControl.verified || modalControl.loading}
                                         value={modalControl.inputText}
                                         onChange={(e) => dispatch({type: 'setNameInputText', nameInputText : e.target.value})}
                                     />
@@ -342,6 +344,7 @@ export default function RSVP() {
                                         placeholder="Enter Answer"
                                         value={modalControl.inputText}
                                         onChange={(e) => dispatch({type: 'setAnsInputText', ansInputText : e.target.value})}
+                                        disabled={modalControl.loading}
                                     />
                                     </div>
                                 <p className='min-h-[30px] m-0 px-3'>{modalControl.ansErrorText}</p>
