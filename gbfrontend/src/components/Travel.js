@@ -67,7 +67,6 @@ export default function Travel(props) {
                         </div>
                         <p className='text-base sm:text-xl mt-6 text-left text-slate-600'>
                             Lodge rooms are located in the main lodge where the reception is held and have shared bathrooms. Chalets and suites are a short walk from the lodge and vary in size and the number of rooms.
-        .
                         </p>
                         <div className="grid grid-flow-row grid-cols-12 gap-1 mx-auto px-1 pb-3 text-justify-center items-stretch max-w-[444px] mt-10">
                             <p className="bg-white/70 col-span-full shadow-sm shadow-slate-700 text-slate-600 text-left px-3 py-1 rounded">
