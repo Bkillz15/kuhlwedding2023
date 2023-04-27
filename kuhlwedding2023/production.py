@@ -93,7 +93,7 @@ WSGI_APPLICATION = 'kuhlwedding2023.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-hostname = os.environ['DBHOST']
+# hostname = os.environ['DBHOST']
 
 DATABASES = {
     'default': {
