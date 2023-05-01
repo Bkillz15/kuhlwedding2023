@@ -16,77 +16,77 @@ export default function Gallery(props) {
     const imagepaths = {  
         img0: {
             title: "Engagement in the Park",
-            imageUrl: "gbfrontend/static/images/GAL_KB_PARK.jpg",
+            imageUrl: "https://drive.google.com/uc?export=view&id=1SGZKhbgbHHW0xHsvZXz08OZyf23soWQM",
             landscape: false,
         },
         img1: {
             title: "Couple in the backyard",
-            imageUrl: "gbfrontend/static/images/GAL_BACKYARD.jpg",
+            imageUrl: "https://drive.google.com/uc?export=view&id=1hbyZBxXg6MCil8wE7nSBRpNTQUqbmitK",
             landscape: false,
         },
         img2: {
             title: "Couple in Mexico",
-            imageUrl: "gbfrontend/static/images/GAL_KB_MEX.jpg",
+            imageUrl: "https://drive.google.com/uc?export=view&id=1OCF4_ZYra4l60qKNukGMAYCk-agVALwG",
             landscape: false,
         },
         img3: {
             title: "Engagement Night",
-            imageUrl: "gbfrontend/static/images/GAL_ENGAGE.jpg",
+            imageUrl: "https://drive.google.com/uc?export=view&id=1Z5O-DA6msxq2fm3Le_YN9bhXRfbvhFNe",
             landscape: false,
         },
         img4: {
             title: "Couple On the Rocks",
-            imageUrl: "gbfrontend/static/images/GAL_KB_ROCK.jpg",
+            imageUrl: "https://drive.google.com/uc?export=view&id=1sdKB5WW7JV1PTiAy40KWEQwQ48QMS7zy",
             landscape: false,
         },
         img5: {
             title: "Couple see the Leafs",
-            imageUrl: "gbfrontend/static/images/GAL_KB_LEAFS.jpg",
+            imageUrl: "https://drive.google.com/uc?export=view&id=1hyjdnVJ59nBx18yRq8p9JpixOSXEQtGC",
             landscape: false,
         },
         img6: {
             title: "Kylie on the beach",
-            imageUrl: "gbfrontend/static/images/GAL_KBEACH.jpg",
+            imageUrl: "https://drive.google.com/uc?export=view&id=1kmZhtrkfgKHHaAk_JH5cAI9UipHcExlE",
             landscape: true,
         },
         img7: {
             title: "Couple in the Shaggin Wagon",
-            imageUrl: "gbfrontend/static/images/GAL_VAN.jpg",
+            imageUrl: "https://drive.google.com/uc?export=view&id=1RZWsq1Trot0oifu9H7NB8cRkvri_7oI-",
             landscape: false,
         },
         img8: {
             title: "BKillz on the Rock",
-            imageUrl: "gbfrontend/static/images/GAL_B_ROCK.jpg",
+            imageUrl: "https://drive.google.com/uc?export=view&id=1ONLXZgDAVtwyNQv-xy08vwABzhhQFrzb",
             landscape: false,
         },
         img9: {
             title: "Couple but Bkillz is tuff",
-            imageUrl: "gbfrontend/static/images/GAL_TUFF.jpg",
+            imageUrl: "https://drive.google.com/uc?export=view&id=1YmuuJU-i33lV2o4SXwE5VzpXzK1nbrIQ",
             landscape: false,
         },
         img10: {
             title: "Couple Gets Whit!",
-            imageUrl: "gbfrontend/static/images/GAL_WHIT.jpg",
+            imageUrl: "https://drive.google.com/uc?export=view&id=15DhQffxcSt5VsVbiyAbjg-z8cGB6y-cu",
             landscape: false,
         },
         img11: {
             title: "Moon through the palms",
-            imageUrl: "gbfrontend/static/images/GAL_SUPERMOON.jpg",
+            imageUrl: "https://drive.google.com/uc?export=view&id=1dZUuVJBXpGzI-hEszvZyMosjBJfRu7IQ",
             landscape: true,
         },
         img12: {
             title: "Couple at the 2's wedding",
-            imageUrl: "gbfrontend/static/images/GAL_KB_SK.jpg",
+            imageUrl: "https://drive.google.com/uc?export=view&id=16hs8gUhNmTvcqQpPpYAZc_ihITqes1ul",
             landscape: false,
         },
         img13: {
             title: "Sunset at Uhl's Sandbay",
-            imageUrl: "gbfrontend/static/images/sunset.jpg",
+            imageUrl: "https://drive.google.com/uc?export=view&id=1Z3fXBFzX9cg3HWqUKL6rV3KVEUWjFkNZ",
             landscape: true,
         },
         img14: {
             title: "King Gizz",
-            imageUrl: "gbfrontend/static/images/GAL_GIZZ.jpg",
+            imageUrl: "https://drive.google.com/uc?export=view&id=1s3l0XpLa2OXX7OjVCVekljtko63TASU4",
             landscape: true,
         },
     }

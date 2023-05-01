@@ -101,7 +101,7 @@ export default function Home(props) {
 
             <div className="mt-20 p-3 mx-2 sm:mx-[10%] bg-white/90 rounded-2xl border-8 border-double border-slate-600/70 shadow-lg shadow-emerald-800">
               <img
-                src="gbfrontend/static/images/kb_closelier.jpg"
+                src="https://drive.google.com/uc?export=view&id=1_kx8qpKscnFQIxwQoukHJ8Cv4Bt0ttsM"
                 alt="Kylie and Branodn hanging in the park"
                 className=""
                 />

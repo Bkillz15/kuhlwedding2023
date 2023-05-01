@@ -1,0 +1,1 @@
+web: gunicorn kuhlwedding2023.wsgi
