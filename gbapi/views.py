@@ -14,10 +14,10 @@ from .models import guestdata
 
 # Create your views here.
 
-class GuestView(ListAPIView):
-    #permission_classes = (IsAuthenticated,) #permission classes
-    queryset = guestdata.objects.all()
-    serializer_class = GuestDataSerializer
+# class GuestView(ListAPIView):
+#     #permission_classes = (IsAuthenticated,) #permission classes
+#     queryset = guestdata.objects.all()
+#     serializer_class = GuestDataSerializer
 
 class GuestNameID(ListAPIView):
     queryset = guestdata.objects.all()

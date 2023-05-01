@@ -156,9 +156,18 @@ STATIC_URL = 'gbfrontend/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME'], os.environ['CUSTOMNAME']] if (('WEBSITE_HOSTNAME' in os.environ) or ('CUSTOMNAME' in os.environ)) else []
+ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']] if (('WEBSITE_HOSTNAME' in os.environ)) else []
 
-CSRF_TRUSTED_ORIGINS = ['https://'+ os.environ['WEBSITE_HOSTNAME'],'https://'+ os.environ['CUSTOMNAME']] if (('WEBSITE_HOSTNAME' in os.environ) or ('CUSTOMNAME' in os.environ)) else []
+if 'CUSTOMNAME' in os.environ:
+    customNames = os.environ['CUSTOMNAME'].split(',')
+    ALLOWED_HOSTS = ALLOWED_HOSTS.append(customNames)
+
+# ['https://'+ os.environ['WEBSITE_HOSTNAME'],'https://'+ os.environ['CUSTOMNAME']] if (('WEBSITE_HOSTNAME' in os.environ) or ('CUSTOMNAME' in os.environ)) else
+
+CSRF_TRUSTED_ORIGINS = []
+
+for hosts in range(len(ALLOWED_HOSTS)):
+    CSRF_TRUSTED_ORIGINS.append('https://' + ALLOWED_HOSTS[hosts])
 
 CSRF_COOKIE_SECURE = True
 
