@@ -165,9 +165,9 @@ if 'CUSTOMNAME' in os.environ:
 # ['https://'+ os.environ['WEBSITE_HOSTNAME'],'https://'+ os.environ['CUSTOMNAME']] if (('WEBSITE_HOSTNAME' in os.environ) or ('CUSTOMNAME' in os.environ)) else
 
 CSRF_TRUSTED_ORIGINS = []
-
-for hosts in range(len(ALLOWED_HOSTS)):
-    CSRF_TRUSTED_ORIGINS.append('https://' + ALLOWED_HOSTS[hosts])
+if ALLOWED_HOSTS is not None:
+    for hosts in range(len(ALLOWED_HOSTS)):
+        CSRF_TRUSTED_ORIGINS.append('https://' + ALLOWED_HOSTS[hosts])
 
 CSRF_COOKIE_SECURE = True
 
