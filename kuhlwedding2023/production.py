@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ['SECRET']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # ALLOWED_HOSTS = ['https://kuhlweddding2023.azurewebsites.net']
 # ALLOWED_HOSTS = server {
@@ -156,18 +156,9 @@ STATIC_URL = 'gbfrontend/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']] if (('WEBSITE_HOSTNAME' in os.environ)) else []
+ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME'], os.environ['CUSTOMNAME'], os.environ['WWWNAME']] if (('WEBSITE_HOSTNAME' in os.environ) and ('CUSTOMNAME' in os.environ) and ('WWWNAME' in os.environ)) else []
 
-if 'CUSTOMNAME' in os.environ:
-    customNames = os.environ['CUSTOMNAME'].split(',')
-    ALLOWED_HOSTS = ALLOWED_HOSTS.append(customNames)
-
-# ['https://'+ os.environ['WEBSITE_HOSTNAME'],'https://'+ os.environ['CUSTOMNAME']] if (('WEBSITE_HOSTNAME' in os.environ) or ('CUSTOMNAME' in os.environ)) else
-
-CSRF_TRUSTED_ORIGINS = []
-if ALLOWED_HOSTS is not None:
-    for hosts in range(len(ALLOWED_HOSTS)):
-        CSRF_TRUSTED_ORIGINS.append('https://' + ALLOWED_HOSTS[hosts])
+CSRF_TRUSTED_ORIGINS = ['https://'+ os.environ['WEBSITE_HOSTNAME'],'https://'+ os.environ['CUSTOMNAME'],'https://'+ os.environ['WWWNAME']] if (('WEBSITE_HOSTNAME' in os.environ) and ('CUSTOMNAME' in os.environ) and ('WWWNAME' in os.environ)) else []
 
 CSRF_COOKIE_SECURE = True
 
