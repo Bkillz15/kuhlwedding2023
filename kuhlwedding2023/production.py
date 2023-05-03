@@ -103,15 +103,22 @@ WSGI_APPLICATION = 'kuhlwedding2023.wsgi.application'
 #     }
 # }
 
+DATABASES = {
+    'default': {
+    }
+}
+
 # DATABASES = {
 #     'default': {
-#         'ENGINPIPE': 'django.db.backends.postgresql',
+#         'ENGINE': 'django.db.backends.postgresql',
 #         'NAME': os.environ['DBNAME'],
 #         'HOST': hostname + ".postgres.database.azure.com",
 #         'USER': os.environ['DBUSER'],
 #         'PASSWORD': os.environ['DBPASS'] 
 #     }
 # }
+
+
 
 
 DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
