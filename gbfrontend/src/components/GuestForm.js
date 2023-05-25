@@ -22,8 +22,7 @@ export default function Guestform({props , updateGuest}) {
         // e.preventDefault();
         //console.log(props)
 
-        if (['Beef', 'Chicken', 'Veggie'].indexOf(mainCourse) >= 0) {
-            console.log("Meal was selected")
+        if (['Beef', 'Chicken', 'Veggie'].indexOf(mainCourse) >= 0 || !coming)  {
 
             let guestVals = props;
 
@@ -150,7 +149,7 @@ export default function Guestform({props , updateGuest}) {
                 </div>
                 <div className="flex flex-col mx-2 sm:mx-0 sm:mr-4 drop-shadow-lg border-2 border-slate-600/70 rounded-2xl" >
                     <p className="p-2 mx-3 grow text-slate-600 text-base">
-                        We are plannig to provide transportation back to town. Would you be interested in a ride? We will be organizing transportation based on interest. 
+                        We are planning to provide transportation back to the Sault the night of the wedding. Would you be interested in a ride? We will be organizing transportation based on interest. 
                         We will update the <a href="/travel" className="text-xl sm:text-xl font-serif font-bold underline decoration-red-900 text-sky-700" target="_blank">travel</a> page closer to the date. 
                     </p>
                     <div className="flex flex-row flex-wrap mb-3 place-items-stretch">

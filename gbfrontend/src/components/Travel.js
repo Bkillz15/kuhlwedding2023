@@ -41,6 +41,10 @@ export default function Travel(props) {
                             Bookings for the accomodations will open May 1<sup>st</sup>, 2023 and can be booked for the days before and after the wedding as needed. All rooms will be reserved for wedding guests until 
                             two months prior to the wedding or June 11<sup>th</sup>. After that date, rooms will also be open to the general public for booking.
                         </p>
+                        <p className='text-base sm:text-xl mt-6 text-left text-slate-600'>
+                            For those spending the night, you may check in starting at noon on the day of the wedding.
+                            Other days will have the usual check in time.
+                        </p>
                         <div className="grid grid-flow-row grid-cols-12 gap-1 mx-auto px-1 pb-3 text-justify-center items-stretch max-w-[444px] mt-10">
                             <p className="bg-white/70 col-span-full shadow-sm shadow-slate-700 text-slate-600 font-sarif font-bold text-xl text-center py-3 rounded">Accommodations</p>
                             <div className="flex flex-col bg-white/70 row-span-2 col-span-6 shadow-sm shadow-slate-700 rounded">
