@@ -277,12 +277,15 @@ export default function Guestform({props , updateGuest}) {
                      <p className="col-span-full text-xl font-semibold font-serif bg-white/70 shadow-sm shadow-slate-700 text-slate-600 text-center py-1 my-4 mx-3 rounded">Not Coming</p>
                 }
                 <button
-                onClick={() => setEdit(true)} 
-                className={"self-center bg-sky-300 text-slate-600 font-serif border-2 py-1 px-6 my-4 ml-3 border-slate-600/70 active:bg-sky-600 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 " +
-                    "font-semibold text-base rounded-xl shadow shadow-emerald-800 hover:shadow-lg hover:shadow-emerald-800 ease-linear transition-all duration-150 "}
+                // onClick={() => setEdit(true)} 
+                    disabled="true"
+                    className={"text-slate-600 bg-sky-300  disabled:bg-sky-300/40 disabled:self-center disabled:text-slate-600/50 font-serif border-2 py-1 px-6 my-4 ml-3 border-slate-600/70 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 " +
+                    "font-semibold text-base rounded-xl "}
                     >
                     Edit
                 </button>
+                <p className="bg-white/70 shadow-sm shadow-slate-700 text-slate-600 font-semibold italic col-span-full md:col-span-3 md:text-left py-1 pl-3 mt-2 mb-0 mr-3 ml-3 md:ml-1 rounded">RSVP is now closed. Please contact Kylie or Brandon directly with any questions/concerns</p>
+                {/* active:bg-sky-600 shadow shadow-emerald-800 hover:shadow-lg hover:shadow-emerald-800 ease-linear transition-all duration-150 */}
             </div>
             
         </>
@@ -293,14 +296,16 @@ export default function Guestform({props , updateGuest}) {
             <h3 className="py-1 px-[15%] mb-5 mt-2 mx-auto w-fit text-slate-600 text-2xl sm:text-3xl text-center font-hw font-semibold drop-shadow-lg bg-sky-300 border-2 rounded-xl border-slate-600/70">
                 {props.guestName}
             </h3>
-            
-            {(props.rsvpSubmitted && !edit) ? showDetails : showGuestForm}
-            
+            {/* {(props.rsvpSubmitted && !edit) ? showDetails : showGuestForm} */}
+            {showDetails}
+                       
            
         </div>
     )
 
 }
+
+
 
 
 

@@ -239,9 +239,7 @@ export default function RSVP() {
         </article>
         <article className="my-20 mx-2 sm:mx-[10%] px-[7%] py-10 bg-gradient-to-r from-white/40 via-white/90 to-white-40 backdrop-saturate-[0.60] rounded-2xl border-8 border-double border-slate-600/70 shadow-lg shadow-emerald-800">
             <p className="my-5 p-4 text-slate-600 text-base md:text-xl">
-                Welcome to the RSVP section. You may start your RSVP by clicking below. You will be asked to search your name and verify your identity with a special question.
-                Once verified, you can edit your selections and submit your form to us. You will be able to come back any time to edit your choices up until the 
-                <span className="relative font-bold font-serif text-xl md:text-2xl text-sky-700"> RSVP deadline of June 30<sup>th</sup></span>
+                Welcome to the RSVP section. The RSVP entry is now closed but you remain able to view your selections. You will be asked to search your name and verify your identity with a special question.
             </p>
             <button
                 className={"bg-sky-300 text-slate-600 active:bg-sky-600 font-serif font-semibold text-xl py-3 px-6 mb-6 rounded-xl border-2 border-slate-600/70 focus:outline-offset-1 focus:outline-dashed focus:outline-emerald-400 focus:outline-2 " +
